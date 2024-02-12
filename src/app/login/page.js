@@ -32,7 +32,7 @@ export default function Page({children}) {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         //console.log(JSON.stringify(formData));
-
+        console.log("backend url : ",process.env.NEXT_PUBLIC_API_URL_SHORT);
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_SHORT}/login`, {
                 method: 'POST',
