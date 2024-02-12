@@ -1,0 +1,23 @@
+/* src/app/components/PrestataireForm/styles.module.css */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.form label {
+    margin-top: 10px;
+}
+
+.form input,
+.form textarea {
+    margin-top: 5px;
+    width: 100%; /* La largeur s'adapte à la largeur du conteneur */
+    max-width: 50vw; /* La largeur maximale est 50% de la largeur de la vue */
+}
+
+.form button {
+    margin-top: 10px;
+    width: auto; /* Ajustez selon vos préférences */
+}

@@ -1,0 +1,42 @@
+.modal {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color: black; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    width: 50%; 
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* Pour aligner le texte des éléments à gauche */
+}
+
+
+.modalBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+    backdrop-filter: blur(5px);
+    z-index: 999; 
+}
+
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-start; /* Aligner les boutons à gauche */
+    gap: 10px; /* Ajouter un peu d'espace entre les boutons */
+}
+
+.buttonContainer button {
+    flex: 0 0 auto; /* Empêcher les boutons de s'étendre */
+}
+
+
