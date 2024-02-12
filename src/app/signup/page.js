@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../../../components/NavBar/Navbar';
 
-export default function page() {
+export default function Page() {
     const [isLoading, setIsLoading] = useState(false);
 
     const initalFormData =  {

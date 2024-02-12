@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import fetchData from './../lib/fetchData';
 
-const useFetchUsers = () => {
+const UseFetchUsers = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -25,4 +25,4 @@ const useFetchUsers = () => {
     return { users, loading, error };
 };
 
-export default useFetchUsers;
+export default UseFetchUsers;

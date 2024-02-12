@@ -7,7 +7,7 @@ import Navbar from '../../../components/NavBar/Navbar';
 
 
 
-export default function page({children}) {
+export default function Page({children}) {
 
     const {user, setUser} = useAppContext();
     console.log("current context in login:", user);

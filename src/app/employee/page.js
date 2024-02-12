@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../../components/NavBar/Navbar'
 
-export default function page() {
+export default function Page() {
   return (
     <>  
         <Navbar></Navbar>
