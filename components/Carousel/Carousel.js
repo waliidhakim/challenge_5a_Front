@@ -20,6 +20,7 @@ const PrestationsCarousel = () => {
   // console.log("infos user from carousel", user);  
 
   useEffect(() => {
+    console.log("fetch of the prestas at url : ", `${process.env.NEXT_PUBLIC_API_URL}/prestations`)
     const fetchPresataires = async () => {
       try {
         const data = await fetchData(`${process.env.NEXT_PUBLIC_API_URL}/prestations`);
