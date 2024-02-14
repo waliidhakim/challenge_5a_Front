@@ -36,10 +36,7 @@ export default function Page() {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                bbody: JSON.stringify({
-                    ...formData,
-                    plainPassword : "password"
-                })
+                body: JSON.stringify(formData)
             });
     
             if (!response.ok) {
