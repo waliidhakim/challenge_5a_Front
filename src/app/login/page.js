@@ -14,7 +14,8 @@ export default function Page({children}) {
     const [formData, setFormData] = useState(
         {
             email: "",
-            password: ""
+            password: "",
+            plainPassword :"nimp"
         }
     );
 
