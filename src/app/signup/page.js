@@ -15,6 +15,7 @@ export default function Page() {
         firstname: "",
         lastname: "",
         address: "",
+        plainPassword : ""
     }
 
     const [formData, setFormData] = useState(initalFormData)    
@@ -30,13 +31,18 @@ export default function Page() {
     const handleSubmit = async (e) =>{
         setIsLoading(true);
         e.preventDefault();
-        console.log(JSON.stringify(formData));
+        const updatedFormData = {
+            ...formData,
+            plainPassword: formData.password, 
+        };
+    
+        console.log("signup register data ",JSON.stringify(updatedFormData));
 
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(updatedFormData)
             });
     
             if (!response.ok) {
