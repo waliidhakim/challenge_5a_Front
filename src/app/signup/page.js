@@ -14,8 +14,7 @@ export default function Page() {
         confirmPassword : "",
         firstname: "",
         lastname: "",
-        address: "",
-        plainPassword :"nimp"
+        address: ""
     }
 
     const [formData, setFormData] = useState(initalFormData)    
