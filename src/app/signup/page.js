@@ -15,7 +15,7 @@ export default function Page() {
         firstname: "",
         lastname: "",
         address: "",
-        plainPassword
+        plainPassword : ""
     }
 
     const [formData, setFormData] = useState(initalFormData)    
