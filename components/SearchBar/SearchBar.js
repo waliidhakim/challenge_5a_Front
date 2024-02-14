@@ -25,6 +25,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   const fetchCategories = async () => {
+    console.log("fetching catégories at url : ", `${process.env.NEXT_PUBLIC_API_URL}/categories`);
     try {
         const data = await fetchData(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
         console.log("Categories : ",data['hydra:member']);
