@@ -15,7 +15,7 @@ export default function Page({children}) {
         {
             email: "",
             password: "",
-            plainPassword :"nimp"
+        
         }
     );
 
