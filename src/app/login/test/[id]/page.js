@@ -3,7 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 
-export default function Page({children}) {
+export default function page({children}) {
 
   const router = useRouter();
     

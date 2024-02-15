@@ -93,9 +93,13 @@ export default function Home({children}) {
           <>
             <main className={styles.main}>
               <Navbar></Navbar>
-              <h1>Home page</h1>
+              <div className='homeContainer'>
+              <h1>Accueil</h1>
+              <h2>De quel service avez-vous besoin ?</h2>
+              <p>Pour chaque situation, trouvez le prestataire dont les compétences répondent à vos attentes et à votre niveau d’exigence.</p>
               <SearchBar onSearch={handleSearch} />
               <SearchResults results={searchResults} ></SearchResults>
+              </div> 
               <Carousel/>
               {children}
             

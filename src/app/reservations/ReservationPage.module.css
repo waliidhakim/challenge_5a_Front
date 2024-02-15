@@ -1,3 +1,6 @@
+.__className_aaf875{
+  background-color: #FFFFFF;
+}
 .title {
     text-align: center;
     margin-top: 20px;
@@ -26,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #f0F0F0;
   }
   
   .details {
@@ -58,4 +61,4 @@
     margin-top: 15px;
     font-weight: bolder;
   }
-  
+ 

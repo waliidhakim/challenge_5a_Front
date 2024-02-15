@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import UserLocationMap from '../../components/UserLocationMap/UserLocationMap';
 import fetchData from '@/app/lib/fetchData';
+import './SearchBar.css'
 
 const SearchBar = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState('');
@@ -25,7 +26,6 @@ const SearchBar = ({ onSearch }) => {
   };
 
   const fetchCategories = async () => {
-    console.log("fetching catégories at url : ", `${process.env.NEXT_PUBLIC_API_URL}/categories`);
     try {
         const data = await fetchData(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
         console.log("Categories : ",data['hydra:member']);

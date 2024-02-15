@@ -1,0 +1,41 @@
+.adminContainer{
+    margin-top: 20px;
+    margin-left: 5%;
+}
+.adminContainer h1{
+    margin-bottom: 20px;
+}
+.adminContainer button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #272a35;
+    border-radius: 20px;
+}
+.adminContainer button:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #000000;
+    border-radius: 20px;
+}
+.adminContainer td{
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: lightgray;
+    border: #000000 1px solid;
+}
+.adminContainer th{
+    background-color: rgb(146, 146, 146);
+    border: #000000 1px solid;
+    padding-left: 15px;
+    padding-right: 15px;
+}

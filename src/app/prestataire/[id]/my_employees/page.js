@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../../../../../components/NavBar/Navbar';
 import { extractId, extractRole } from '@/app/lib/utils';
+import './myemployee.css'
 
 
 const Page = ({params}) => {
@@ -51,6 +52,7 @@ const Page = ({params}) => {
     return (
         <div>
             <Navbar></Navbar>
+            <div className="employeeContainer">
             <h1>Les employées du prestataire d'ID {prestataireId}</h1>
             {loadingUsers && <div>Chargement...</div> }
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -96,6 +98,7 @@ const Page = ({params}) => {
                 ))}
             </tbody>
             </table>
+        </div>
         </div>
     );
 };

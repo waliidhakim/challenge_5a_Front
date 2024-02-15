@@ -1,0 +1,41 @@
+.employeeContainer{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.employeeContainer h1{
+    padding-bottom: 20px;
+}
+.employeeContainer td{
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: lightgray;
+    border: #000000 1px solid;
+}
+.employeeContainer th{
+    background-color: rgb(146, 146, 146);
+    border: #000000 1px solid;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.employeeContainer button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #272a35;
+    border-radius: 20px;
+}
+.employeeContainer button:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #000000;
+    border-radius: 20px;
+}

@@ -13,6 +13,7 @@ import { useAppContext } from '../../../components/contextTest2/context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuildingCircleArrowRight, faUser } from '@fortawesome/free-solid-svg-icons';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import './admin.css'
 
 
 import {extractId, extractRole} from './../lib/utils';
@@ -384,7 +385,7 @@ const Page = () => {
     return (
         <>  
             <Navbar></Navbar>
-            <div>
+            <div className='adminContainer'>
                 <h1>Liste des utilisateurs</h1>
                 {loadingUsers && <div>Chargement...</div> }
                 {errorUsers != null ? <div>{errorUsers}</div>  : <button onClick={handleOpenModal}>Créer un Utilisateur</button> }
@@ -490,7 +491,7 @@ const Page = () => {
                     </tbody>
                 </table>
 
-                <h1>Liste des etablissements</h1>
+                <h1>Liste des établissements</h1>
                 {loadingEtabs && <div>Chargement...</div> }
                 {errorEtabs != null ? <div>{errorEtabs}</div>  : <button onClick={handleOpenModal}>Créer un Etablissement</button> }
                 

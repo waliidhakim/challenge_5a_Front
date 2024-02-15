@@ -6,10 +6,11 @@ import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuildingCircleArrowRight, faUser } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../../../../../components/NavBar/Navbar';
+import './espacepresta.css'
 
 
 
-export default function Page({params}) {
+export default function page({params}) {
 
   const router = useRouter();
   const idPresta = params.id;  
@@ -47,7 +48,8 @@ export default function Page({params}) {
   return (
     <>  
         <Navbar></Navbar>
-        <h1>Prestataire Section</h1>
+        <div className='prestataireContainer'>
+        <h1>Section des prestataires</h1>
         <button onClick={handleEmployeesButtonClick}>Mes employées</button>
         <h2>Liste de mes prestataires</h2>
                 <button onClick={handleAddPrestataire}>Ajouter un nouveau prestataire</button>
@@ -94,6 +96,7 @@ export default function Page({params}) {
                         ))}
                     </tbody>
                 </table>
+                </div>
     </>
   )
 }

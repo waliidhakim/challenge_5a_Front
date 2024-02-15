@@ -60,6 +60,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
+      <div className='reservationContainer' >
       <h1 className={styles.title}>Mes réservations</h1>
       <div className={styles.reservationList}>
         {bookings.map((booking) => (
@@ -80,6 +81,7 @@ export default function Page() {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </>
   );

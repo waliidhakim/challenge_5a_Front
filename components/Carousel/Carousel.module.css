@@ -1,6 +1,21 @@
 /* PrestationsCarousel.module.css */
 .carouselItem {
+  padding: 20px;
     margin: 30px; 
-    text-align: center; 
+    text-align: left; 
   }
-  
+  .carouselItem svg {
+      width: 100%;
+      padding-bottom: 10%;
+    }
+  .carouselItem:hover {
+   background-color: #DCDCDC;
+   transform: scale(1.1);
+    transition: 0.4s;
+    border-radius: 30px;
+    }
+
+  .titleContainer{
+    padding-top: 20px;
+    margin-top: 20px;
+  }

@@ -1,37 +1,37 @@
-
-.prestaForm{
+body{
+    display: block;
+    width: 100%;
+    background-color: #FFFFFF;
+    --background-end-rgb:none;
+    color: black;
+}
+.profileContainer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: #DCDCDC;
     padding-top: 5%;
     padding-bottom: 5%;
     margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
     border: solid 2px;
     width: 50%;
-    margin-left: 25%;
+    
 }
-.formgroup{
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    color: black;
-    padding: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+label{
+    margin-top: 10px;
 }
-.prestaInput{
+input{
     display: block;
     border-radius: 10px;
     background-color: #FFFFFF;
-    width: 300px;
+    color: black;
+    width: 100%;
     padding: 5px;
     margin-left: 10px;
 }
-.btn{
+button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,4 +41,15 @@
     margin-bottom: 10px;
     background: #272a35;
     border-radius: 20px;
+}
+.form-group{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: black;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

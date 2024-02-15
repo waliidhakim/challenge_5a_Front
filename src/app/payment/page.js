@@ -7,6 +7,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import fetchData from '../lib/fetchData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCar } from '@fortawesome/free-solid-svg-icons';
+import Navbar from '../../../components/NavBar/Navbar';
+import './payment.css'
 
 const stripePromise = loadStripe('pk_test_51NVqQtKRXD3JBQTy6JIY4sIGD0JjJN5B3XuwwjUgixkigGpr97sUWtQzYtqz2MxT98PE5iEUcrTs1smFQ7ecb71m000jBmKkLL');
 
@@ -108,10 +110,11 @@ const CheckoutButton = () => {
 
     return (
       <>
+      <div><Navbar></Navbar></div>
         <h1>Récapitulatif</h1>
         {loading ? <p>Chargement...</p> : (
           <>
-            <div>
+            <div className='paymentContainer'>
               <h2>Détails de la Prestation</h2>
               <p>Nom: {prestationDetails.name}</p>
               <p>Prix: {prestationDetails.price}€</p>
@@ -130,12 +133,12 @@ const CheckoutButton = () => {
             </div>
 
 
-            <div>
+            <div className='paymentContainer'>
               <h2>Vos Informations</h2>
               <p>Nom: {user?.firstname} {user?.lastname}</p>
               <p>Adresse: {user?.address}</p>
             </div>
-            <div>
+            <div className='paymentContainer'>
               <h2>Planning Choisi</h2>
               <p>{prestaSchedule ??
                 <span key={index}>{new Date(date).toLocaleString()}</span>
@@ -144,8 +147,10 @@ const CheckoutButton = () => {
             </div>
             <button onClick={handleCheckout}>Payer maintenant</button>
           </>
+          
         )}
       </>
+      
     );
 };
 

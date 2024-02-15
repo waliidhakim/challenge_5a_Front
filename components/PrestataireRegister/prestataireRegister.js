@@ -1,11 +1,25 @@
 // src/app/components/PrestataireForm/index.js
 "use client"
 import React, { useState } from 'react';
-import styles from './prestataireRegister.module.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAppContext } from '../contextTest2/context';
 import { useRouter } from 'next/navigation';
+import styles from './prestataireRegister.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faComment,
+  faEnvelope,
+  faHashtag,
+  faHome,
+  faImage,
+  faInfo,
+  faLock,
+  faMagnifyingGlass,
+  faMagnifyingGlassDollar,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { Faustina } from 'next/font/google';
 
 const PrestataireRegister = () => {
 
@@ -167,46 +181,45 @@ const PrestataireRegister = () => {
                 <button type="button" onClick={handleSubmit}>Envoyer</button>
             </div> */}
             {isLoading && <div>Chargement...</div> }
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Nom du prestataire :</label>
-                    <input type="text" name="name" value={presta.name} onChange={handleChange} />
+            <form className={styles.prestaForm} onSubmit={handleSubmit}>
+            <h1>Devenir Prestataire</h1>
+                <div className={styles.formgroup}>
+                <FontAwesomeIcon icon={faUser} />
+                    <input className={styles.prestaInput} type="text" name="name" placeholder="Nom du prestataire" value={presta.name} onChange={handleChange} />
 
                     {/* <label htmlFor="name">Nom:</label>
                     <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Nom" required /> */}
                 </div>
-                <div>
-                    <label>Adresse :</label>
-                    <input type="text" name="address" value={presta.address} onChange={handleChange} />
+                <div className={styles.formgroup}>
+                <FontAwesomeIcon icon={faHome} />
+                    <input className={styles.prestaInput} type="text" name="address" placeholder="Adresse" value={presta.address} onChange={handleChange} />
                     {/* <label>Nom:</label>
                     <input type="text" name="lastname" value={user.lastname || ''} onChange={handleChange} /> */}
                 </div>
-                <div>
-                    <label>Description :</label>
-                    <input type="text" name="description" value={presta.description} onChange={handleChange} />
+                <div className={styles.formgroup}>
+                <FontAwesomeIcon icon={faComment} />
+                    <input className={styles.prestaInput} type="text" name="description" placeholder="Description" value={presta.description} onChange={handleChange} />
                 </div>
 
-                <div>
-                    <label>Informations de contact : </label>
-                    <input type="text" name="contactInfos" value={presta.contactInfos} onChange={handleChange} />
+                <div className={styles.formgroup}>
+                <FontAwesomeIcon icon={faInfo} />
+                    <input className={styles.prestaInput} type="text" name="contactInfos" placeholder="Information de contact" value={presta.contactInfos} onChange={handleChange} />
                 </div>
-                <div>
-                    <label>Secteur: </label>
-                    <input type="text" name="sector" value={presta.sector} onChange={handleChange} />
+                <div className={styles.formgroup}>
+                <FontAwesomeIcon icon={faMagnifyingGlassDollar} />
+                    <input className={styles.prestaInput} type="text" name="sector" placeholder="Secteur d'activité" value={presta.sector} onChange={handleChange} />
                 </div>
 
-                <div>
-                    <label>Kbis: </label>
-                    <input type="text" name="kbis" value={presta.kbis} onChange={handleChange} />
+                <div className={styles.formgroup}>
+                <FontAwesomeIcon icon={faHashtag} />
+                    <input className={styles.prestaInput} type="text" name="kbis" placeholder="Numéro de Siret" value={presta.kbis} onChange={handleChange} />
                 </div>
-                <div>
-                    <label>Image:</label>
-                    <input type="file" name="image" onChange={handleImageChange} />
+                <div className={styles.formgroup}>
+                <FontAwesomeIcon icon={faImage} />
+                    <input className={styles.prestaInput} type="file" name="image" placeholder="Image" onChange={handleImageChange} />
                 </div>
-                <button type="submit">Enregistrer</button>
+                <button className={styles.btn} type="submit">Enregistrer</button>
             </form>
-        
-            
         </>
     );
 };

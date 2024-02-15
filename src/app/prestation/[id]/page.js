@@ -9,6 +9,7 @@ import Navbar from '../../../../components/NavBar/Navbar';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCar } from '@fortawesome/free-solid-svg-icons';
+import styles from '../[id]/prestation.css';
 
 
 
@@ -93,16 +94,16 @@ const PrestationPage = ({ params }) => {
 
 
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (loading) return <div>Chargement...</div>;
+  if (error) return <div>Erreur: {error.message}</div>;
 
   return (
     <div>
       <Navbar></Navbar>
       {prestation && (
         <>
-          <h1>{prestation.name} prestation</h1>
-          
+          <h1>{prestation.name}</h1>
+          <div className='prestaContainer'>
           {/* <img src="https://challange-esgi.s3.eu-central-1.amazonaws.com/users/125.jpg" alt={prestation.name} /> */}
           {prestation.image ? 
                 (
@@ -115,20 +116,20 @@ const PrestationPage = ({ params }) => {
                         
                 (
                             
-                    <div style={{ fontSize: '40px' }}>
+                    <div style={{ fontSize: '40px', }}>
                         <FontAwesomeIcon icon={faCar} />
                     </div>
                 )
            }
           
           
-          <p>{prestation.description}</p>
-          <p>Prix: {prestation.price}</p>
-          <p>Establishment: {prestation.establishment.name}</p>
-          <p>Establishment address: {prestation.establishment.address}</p>
-          
+          <p> <span className='test'>Description: </span>{prestation.description}</p>
+          <p><span className='test'>Prix: </span>{prestation.price} €</p>
+          <p><span className='test'>Etablissement: </span>{prestation.establishment.name}</p>
+          <p><span className='test'>Adresse de l'établissement:</span>{prestation.establishment.address}</p>
+          </div>
           <h2>Choisir un créneau </h2>
-
+          <div className='Container'>
           <ScheduleSelector
             selection={schedule}
             numDays={5}
@@ -143,7 +144,7 @@ const PrestationPage = ({ params }) => {
 
 
           <button onClick={handlePaymentButtonClick}>Valider</button>
-
+</div>
         </>
       )}
     </div>

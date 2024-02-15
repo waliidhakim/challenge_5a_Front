@@ -1,0 +1,55 @@
+body{
+    display:block;
+    width: 100%;
+    background-color: #FFFFFF;
+    --background-end-rgb:none;
+    color: black;
+}
+h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    background: #272a35;
+    border-radius: 20px;
+}
+button:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    background: #000000;
+    color: #FFFFFF;
+    transform: scale(1.1);
+    transition: 0.4s;
+    border-radius: 20px;
+}
+.prestaContainer{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.test{
+    font-weight: bold;
+    margin-right: 5px;
+    margin-bottom: 15px;
+}
+h2{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.Container{
+    width: 90%;
+}

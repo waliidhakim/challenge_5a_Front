@@ -3,7 +3,8 @@
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%);
-    background-color: black; 
+    background-color: lightgray; 
+    border: 1px solid black;
     padding: 20px; 
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -15,7 +16,32 @@
     justify-content: center;
     text-align: left; /* Pour aligner le texte des éléments à gauche */
 }
-
+.modal p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.modal input{
+    display: block;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: black;
+    width: 200px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top:  5px;
+    margin-bottom: 5px;
+}
+.modal textarea{
+    display: block;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: black;
+    width: 300px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top:  5px;
+    margin-bottom: 5px;
+}
 
 .modalBackground {
     position: fixed;

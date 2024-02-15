@@ -2,6 +2,15 @@
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../../../components/contextTest2/context';
 import Navbar from '../../../components/NavBar/Navbar';
+import './profile.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faHome,
+  faImage,
+  faLock,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ProfilePage = () => {
     const [user, setUser] = useState({
@@ -101,31 +110,33 @@ const ProfilePage = () => {
     return (
         <div>
             <Navbar></Navbar>
+            <div className='profileContainer'>
             <h1>Profil de l'utilisateur</h1>
             <form onSubmit={handleSubmit}>
                 {/* <div>
                     <label>Email:</label>
                     <input type="email" name="email" value={user.email || ''} onChange={handleChange} />
                 </div> */}
-                <div>
-                    <label>Prénom:</label>
+                <div className="form-group">
+                <FontAwesomeIcon icon={faUser} />
                     <input type="text" name="firstname" value={user.firstname || ''} onChange={handleChange} />
                 </div>
-                <div>
-                    <label>Nom:</label>
+                <div className="form-group">
+                <FontAwesomeIcon icon={faUser} />
                     <input type="text" name="lastname" value={user.lastname || ''} onChange={handleChange} />
                 </div>
-                <div>
-                    <label>Adresse:</label>
+                <div className="form-group">
+                <FontAwesomeIcon icon={faHome} />
                     <input type="text" name="address" value={user.address || ''} onChange={handleChange} />
                 </div>
-                <div>
-                    <label>Image:</label>
+                <div className="form-group">
+                <FontAwesomeIcon icon={faImage} />
                     <input type="file" name="image" onChange={handleImageChange} required />
                     {user.image && <img src={user.image} alt="Profil" style={{ maxWidth: '200px' }} />}
                 </div>
                 <button type="submit">Enregistrer</button>
             </form>
+            </div>
         </div>
     );
 };

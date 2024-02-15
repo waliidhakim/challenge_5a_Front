@@ -2,8 +2,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
+    color: #FFFFFF;
+    height: 4rem;
+    width: 100%;
 }
 
 .navbar a {
-    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 5%;
+    min-width: 150px;
+    text-align: center;
+}
+.navbar a:hover {
+    background-color: #FFFFFF;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+    transform: scale(1.2);
+    transition: 0.4s;
 }

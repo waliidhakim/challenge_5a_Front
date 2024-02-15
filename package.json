@@ -20,12 +20,13 @@
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-schedule-selector": "^3.0.2",
+    "react-schedule-selector": "^2.0.0",
     "react-slick": "^0.29.0",
     "react-toastify": "^10.0.4",
     "recharts": "^2.11.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "trace": "^3.1.1"
   },
   "devDependencies": {
     "eslint": "^8",

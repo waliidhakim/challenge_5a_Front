@@ -20,7 +20,6 @@ const PrestationsCarousel = () => {
   // console.log("infos user from carousel", user);  
 
   useEffect(() => {
-      console.log("fetch of the prestas at url : ", `${process.env.NEXT_PUBLIC_API_URL}/prestations`);
     const fetchPresataires = async () => {
       try {
         const data = await fetchData(`${process.env.NEXT_PUBLIC_API_URL}/prestations`);
@@ -44,12 +43,12 @@ const PrestationsCarousel = () => {
     slidesToScroll: 1,
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (loading) return <div>Chargement...</div>;
+  if (error) return <div>Erreur: {error.message}</div>;
 
   return (
-    <div style={{width : "900px"}}>
-      <h2>Prestations</h2>
+    <div style={{width : "950px"}}>
+      <h2 className={styles.titleContainer}>Prestations populaires :</h2>
       <Slider {...settings}>
         {prestations.map((prestation) => (
           <div key={prestation.id} className={styles.carouselItem}>
@@ -71,7 +70,7 @@ const PrestationsCarousel = () => {
               
             </Link>
             <p>{prestation.description}</p>
-            <p>Prix: {prestation.price}</p>
+            <p>Prix: {prestation.price}€</p>
           </div>
         ))}
       </Slider>

@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import fetchData from '@/app/lib/fetchData';
 import ScheduleSelector from 'react-schedule-selector';
-import moment from 'moment';
 
 export default function Page({ params }) {
   const [bookingDetails, setBookingDetails] = useState(null);
