@@ -8,7 +8,7 @@ import "./login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 
-export default function age({ children }) {
+export default function Page({ children }) {
   const { user, setUser } = useAppContext();
   console.log("current context in login:", user);
   const [formData, setFormData] = useState({
