@@ -67,7 +67,80 @@ export default function Page() {
     }
   };
 
-  return (
+//   return (
+//     <>
+//       <Navbar></Navbar>
+//       <ToastContainer />
+//       <div className="card">
+//         <h2 className="card-header">Créer un compte</h2>
+//         <div className="card-body">
+//           <form onSubmit={handleSubmit}>
+//             <div className="form-group">
+//               <FontAwesomeIcon icon={faUser} />
+//               <input
+//                 name="firstname"
+//                 type="text"
+//                 onChange={handleChange}
+//                 placeholder="Entrer votre nom"
+//               />
+//             </div>
+//             <div className="form-group">
+//               <FontAwesomeIcon icon={faUser} />
+//               <input
+//                 name="lastname"
+//                 type="text"
+//                 onChange={handleChange}
+//                 placeholder="Entrez votre prénom"
+//               />
+//             </div>
+//             <div className="form-group">
+//               <FontAwesomeIcon icon={faEnvelope} />
+//               <input
+//                 name="email"
+//                 type="text"
+//                 onChange={handleChange}
+//                 placeholder="Entrer votre adresse email"
+//               />
+//             </div>
+//             <div className="form-group">
+//               <FontAwesomeIcon icon={faHome} />
+//               <input
+//                 name="address"
+//                 type="text"
+//                 onChange={handleChange}
+//                 placeholder="Entrer votre adresse"
+//               />
+//             </div>
+//             <div className="form-group">
+//               <FontAwesomeIcon icon={faLock} />
+//               <input
+//                 name="password"
+//                 type="password"
+//                 onChange={handleChange}
+//                 placeholder="Entrez votre mot de passe"
+//               />
+//             </div>
+
+//             <div className="form-group">
+//               <FontAwesomeIcon icon={faLock} />
+//               <input
+//                 name="confirmPassword"
+//                 type="password"
+//                 onChange={handleChange}
+//                 placeholder="Confirmer votre mot de passe"
+//               />
+//             </div>
+
+//             <button className="btn btn-primary">S'inscrire</button>
+//             {/* <Link href="/account/login" className="btn btn-link">Cancel</Link> */}
+//           </form>
+//           {isLoading && <div>Chargement...</div>}
+//         </div>
+//       </div>
+//     </>
+//   );
+
+return (
     <>
       <Navbar></Navbar>
       <ToastContainer />
@@ -76,67 +149,35 @@ export default function Page() {
         <div className="card-body">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <FontAwesomeIcon icon={faUser} />
-              <input
-                name="firstname"
-                type="text"
-                onChange={handleChange}
-                placeholder="Entrer votre nom"
-              />
+              <label htmlFor="firstname"><FontAwesomeIcon icon={faUser} /> Prénom</label>
+              <input id="firstname" name="firstname" type="text" onChange={handleChange} placeholder="Entrez votre prénom" />
             </div>
             <div className="form-group">
-              <FontAwesomeIcon icon={faUser} />
-              <input
-                name="lastname"
-                type="text"
-                onChange={handleChange}
-                placeholder="Entrez votre prénom"
-              />
+              <label htmlFor="lastname"><FontAwesomeIcon icon={faUser} /> Nom</label>
+              <input id="lastname" name="lastname" type="text" onChange={handleChange} placeholder="Entrez votre nom" />
             </div>
             <div className="form-group">
-              <FontAwesomeIcon icon={faEnvelope} />
-              <input
-                name="email"
-                type="text"
-                onChange={handleChange}
-                placeholder="Entrer votre adresse email"
-              />
+              <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email</label>
+              <input id="email" name="email" type="email" onChange={handleChange} placeholder="Entrez votre adresse email" />
             </div>
             <div className="form-group">
-              <FontAwesomeIcon icon={faHome} />
-              <input
-                name="address"
-                type="text"
-                onChange={handleChange}
-                placeholder="Entrer votre adresse"
-              />
+              <label htmlFor="address"><FontAwesomeIcon icon={faHome} /> Adresse</label>
+              <input id="address" name="address" type="text" onChange={handleChange} placeholder="Entrez votre adresse" />
             </div>
             <div className="form-group">
-              <FontAwesomeIcon icon={faLock} />
-              <input
-                name="password"
-                type="password"
-                onChange={handleChange}
-                placeholder="Entrez votre mot de passe"
-              />
+              <label htmlFor="password"><FontAwesomeIcon icon={faLock} /> Mot de passe</label>
+              <input id="password" name="password" type="password" onChange={handleChange} placeholder="Entrez votre mot de passe" />
             </div>
-
             <div className="form-group">
-              <FontAwesomeIcon icon={faLock} />
-              <input
-                name="confirmPassword"
-                type="password"
-                onChange={handleChange}
-                placeholder="Confirmer votre mot de passe"
-              />
+              <label htmlFor="confirmPassword"><FontAwesomeIcon icon={faLock} /> Confirmer le mot de passe</label>
+              <input id="confirmPassword" name="confirmPassword" type="password" onChange={handleChange} placeholder="Confirmez votre mot de passe" />
             </div>
-
             <button className="btn btn-primary">S'inscrire</button>
-            {/* <Link href="/account/login" className="btn btn-link">Cancel</Link> */}
           </form>
           {isLoading && <div>Chargement...</div>}
         </div>
       </div>
     </>
-  );
+);
+
 }

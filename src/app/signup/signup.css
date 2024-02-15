@@ -1,57 +1,87 @@
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Ceci peut causer un agencement horizontal */
+    flex-direction: column; /* S'assurer que le contenu est empilé verticalement */
+    align-items: center; /* Centrer les éléments horizontalement */
+    justify-content: flex-start; /* Aligner le contenu depuis le début de la page */
+    min-height: 100vh; /* Hauteur minimale pour prendre toute la hauteur de la fenêtre */
+}
+
+.card {
+    background-color: #ffffff; /* Couleur de fond légère pour la carte */
+    padding: 40px;
+    border-radius: 20px; /* Bords arrondis pour un look moderne */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet de profondeur */
     width: 100%;
-    background-color: #FFFFFF;
-    --background-end-rgb:none;
-    color: black;
+    max-width: 600px; /* Ajustez selon la largeur désirée */
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'interaction */
 }
-.card{
+
+.card:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
+
+.card-header {
+    color: #4A90E2; /* Couleur primaire pour le titre */
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px; /* Taille de police ajustée pour le titre */
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #DCDCDC;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin-top: 5%;
-    border: solid 2px;
-    width: 50%;
-}
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.form-group{
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    color: black;
-    padding: 5px;
-    margin-top: 20px;
+    align-items: flex-start;
+    width: 100%;
     margin-bottom: 20px;
 }
-input{
-    display: block;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    width: 300px;
-    padding: 5px;
-    margin-left: 10px;
-}
-.btn{
+
+.form-group label {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 300px;
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background: #272a35;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, .btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
     border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7; /* Fond légèrement différent pour les champs */
+}
+
+input[type="file"] {
+    border: none;
+}
+
+input[type="file"]::file-selector-button {
+    padding: 10px;
+    background-color: #eaeaea;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #ddd;
+}
+
+.btn {
+    background-color: #4A90E2; /* Couleur primaire pour le bouton */
+    color: white; /* Texte blanc pour le bouton */
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #357ABD; /* Couleur au survol du bouton */
 }
