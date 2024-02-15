@@ -8,7 +8,7 @@ import "./login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 
-export default function Page({ children }) {
+export default function age({ children }) {
   const { user, setUser } = useAppContext();
   console.log("current context in login:", user);
   const [formData, setFormData] = useState({
@@ -80,24 +80,32 @@ export default function Page({ children }) {
         <h2 className="card-header">Se connecter</h2>
         <div className="card-body">
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <FontAwesomeIcon icon={faEnvelope} />
-              <input
-                name="email"
-                type="text"
-                onChange={handleChange}
-                placeholder="Saisir votre adresse mail"
-              />
-            </div>
-            <div className="form-group">
-                <FontAwesomeIcon icon={faLock}/>
-              <input
-                name="password"
-                type="password"
-                onChange={handleChange}
-                placeholder="Saisir votre mot de passe"
-              />
-            </div>
+          <div className="form-group">
+    <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} />  Adresse Mail</label>
+    <div>
+        
+        <input
+            id="email"
+            name="email"
+            type="text"
+            onChange={handleChange}
+            placeholder="Saisir votre adresse mail"
+        />
+    </div>
+</div>
+<div className="form-group">
+    <label htmlFor="password"> <FontAwesomeIcon icon={faLock}/> Mot de Passe</label>
+    <div>
+        
+        <input
+            id="password"
+            name="password"
+            type="password"
+            onChange={handleChange}
+            placeholder="Saisir votre mot de passe"
+        />
+    </div>
+</div>
 
             <button className="btn">Connexion</button>
 

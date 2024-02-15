@@ -1,58 +1,89 @@
-body{
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    background-color: #FFFFFF;
-    --background-end-rgb:none;
-    color: black;
+    max-width: 400px;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card{
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    color: #4A90E2;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #DCDCDC;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin-top: 5%;
-    border: solid 2px;
-    width: 50%;
-}
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.form-group{
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    color: black;
-    padding: 5px;
-    margin-top: 20px;
+    align-items: flex-start;
+    width: 100%;
     margin-bottom: 20px;
 }
-input{
+
+.form-group label {
     display: block;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    color: black;
-    width: 300px;
-    padding: 5px;
-    margin-left: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
 }
-.btn{
+
+.form-group div {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 300px;
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background: #272a35;
+    width: 100%;
+}
+
+input, .btn {
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
     border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    outline: none;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    flex-grow: 1;
+    margin-right: 10px; /* Ajuste l'espacement entre l'icône et le champ */
+}
+
+.btn {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: auto; /* Permet au bouton de s'ajuster au texte */
+    padding: 10px 15px; /* Uniformise le padding avec les inputs */
+}
+
+.btn:hover {
+    background-color: #357ABD;
+}
+
+.btn + .btn {
+    margin-left: 10px; /* Espacement entre les boutons */
 }
