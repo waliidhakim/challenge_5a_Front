@@ -455,6 +455,8 @@ const Page = () => {
                             <th>Statut</th>
                             <th>Propriétaire</th>
                             <th>Image</th>
+                            <th>Action</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -464,8 +466,8 @@ const Page = () => {
                                 <td>{prestataire.name}</td>
                                 <td>{prestataire.sector}</td>
                                 <td>{prestataire.status}</td>
-                                <td>{prestataire.owner.lastname}</td>
-                                <td>{prestataire.owner.lastname}</td>
+                                <td>{prestataire.owner.lastname} {prestataire.owner.lastname}</td>
+                               
                                 <td>
                                     {prestataire.image ? (
                                             <img 
@@ -501,6 +503,7 @@ const Page = () => {
                             <th>Identifiant</th>
                             <th>Nom</th>
                             <th>Prestataire</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
