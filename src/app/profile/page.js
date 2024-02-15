@@ -107,35 +107,80 @@ const ProfilePage = () => {
         }
     };
 
+    // return (
+    //     <div>
+    //         <Navbar></Navbar>
+    //         <div className="page-content">
+    //         <div className='profileContainer'>
+    //         <h1>Profil de l'utilisateur</h1>
+    //         <form onSubmit={handleSubmit}>
+    //             {/* <div>
+    //                 <label>Email:</label>
+    //                 <input type="email" name="email" value={user.email || ''} onChange={handleChange} />
+    //             </div> */}
+    //             <div className="form-group">
+    //             <FontAwesomeIcon icon={faUser} />
+    //                 <input type="text" name="firstname" value={user.firstname || ''} onChange={handleChange} />
+    //             </div>
+    //             <div className="form-group">
+    //             <FontAwesomeIcon icon={faUser} />
+    //                 <input type="text" name="lastname" value={user.lastname || ''} onChange={handleChange} />
+    //             </div>
+    //             <div className="form-group">
+    //             <FontAwesomeIcon icon={faHome} />
+    //                 <input type="text" name="address" value={user.address || ''} onChange={handleChange} />
+    //             </div>
+    //             <div className="form-group">
+    //             <FontAwesomeIcon icon={faImage} />
+    //                 <input type="file" name="image" onChange={handleImageChange} required />
+    //                 {user.image && <img src={user.image} alt="Profil" style={{ maxWidth: '200px' }} />}
+    //             </div>
+    //             <button type="submit">Enregistrer</button>
+    //         </form>
+    //         </div> 
+
+    //         </div>
+    //     </div>
+    // );
     return (
         <div>
-            <Navbar></Navbar>
-            <div className='profileContainer'>
-            <h1>Profil de l'utilisateur</h1>
-            <form onSubmit={handleSubmit}>
-                {/* <div>
-                    <label>Email:</label>
-                    <input type="email" name="email" value={user.email || ''} onChange={handleChange} />
-                </div> */}
-                <div className="form-group">
-                <FontAwesomeIcon icon={faUser} />
-                    <input type="text" name="firstname" value={user.firstname || ''} onChange={handleChange} />
+            <Navbar />
+            <div className="page-content">
+                <div className='profileContainer'>
+                    <h1>Profil de l'utilisateur</h1>
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <label htmlFor="firstname">
+                                <FontAwesomeIcon icon={faUser} />
+                                Prénom
+                            </label>
+                            <input type="text" id="firstname" name="firstname" value={user.firstname || ''} onChange={handleChange} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="lastname">
+                                <FontAwesomeIcon icon={faUser} />
+                                Nom
+                            </label>
+                            <input type="text" id="lastname" name="lastname" value={user.lastname || ''} onChange={handleChange} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="address">
+                                <FontAwesomeIcon icon={faHome} />
+                                Adresse
+                            </label>
+                            <input type="text" id="address" name="address" value={user.address || ''} onChange={handleChange} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="image">
+                                <FontAwesomeIcon icon={faImage} />
+                                Image de profil
+                            </label>
+                            <input type="file" id="image" name="image" onChange={handleImageChange} />
+                            {user.image && <img src={user.image} alt="Profil" style={{ maxWidth: '200px', marginTop: '10px' }} />}
+                        </div>
+                        <button type="submit">Enregistrer les modifications</button>
+                    </form>
                 </div>
-                <div className="form-group">
-                <FontAwesomeIcon icon={faUser} />
-                    <input type="text" name="lastname" value={user.lastname || ''} onChange={handleChange} />
-                </div>
-                <div className="form-group">
-                <FontAwesomeIcon icon={faHome} />
-                    <input type="text" name="address" value={user.address || ''} onChange={handleChange} />
-                </div>
-                <div className="form-group">
-                <FontAwesomeIcon icon={faImage} />
-                    <input type="file" name="image" onChange={handleImageChange} required />
-                    {user.image && <img src={user.image} alt="Profil" style={{ maxWidth: '200px' }} />}
-                </div>
-                <button type="submit">Enregistrer</button>
-            </form>
             </div>
         </div>
     );

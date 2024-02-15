@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #0d1314, #78ffd6); /* Dégradé de couleurs */
+    background: linear-gradient(to right, #81daea, #3d8ed9); /* Dégradé de couleurs */
     color: #FFFFFF;
     font-weight: bold;
     height: 4rem;
