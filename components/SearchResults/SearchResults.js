@@ -30,7 +30,7 @@ const SearchResults = ({ results, searchMade }) => {
             ) : (
                 <div className={styles.resultsContainer}>
                     {results.map((result) => (
-                        <div>
+                        <div key={result.id}>
                           <h2>Résultat de la recherche</h2>
                           <div key={result.id} className={styles.resultCard}>
                               <h3>Nom de la prestation : {result.name}</h3>
