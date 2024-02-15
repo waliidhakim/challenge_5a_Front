@@ -118,7 +118,7 @@ const CreateUserModal = ({ isOpen, onClose, onSubmit }) => {
                             required
                         />
 
-                        <button type="button" onClick={handleSubmit}>Créer</button>
+                        <button type="button" className={styles.btnModal} onClick={handleSubmit}>Créer</button>
                     </form>
                     <button onClick={onClose}>Fermer</button>
                     
