@@ -63,46 +63,61 @@ const CreateUserModal = ({ isOpen, onClose, onSubmit }) => {
                     
                     <h2>Créer un Utilisateur</h2>
                     <form>
+                        <label htmlFor="email">Email</label>
                         <input
                             type="email"
                             name="email"
+                            id="email" /* Assurez-vous que l'id correspond au htmlFor du label */
                             placeholder="Email"
                             value={userData.email}
                             onChange={handleChange}
                             required
                         />
+
+                        <label htmlFor="password">Mot de passe</label>
                         <input
                             type="password"
                             name="password"
+                            id="password"
                             placeholder="Mot de passe"
                             value={userData.password}
                             onChange={handleChange}
                             required
                         />
+
+                        <label htmlFor="confirmPassword">Confirmer le mot de passe</label>
                         <input
                             type="password"
                             name="confirmPassword"
+                            id="confirmPassword"
                             placeholder="Confirmer le mot de passe"
                             value={userData.confirmPassword}
                             onChange={handleChange}
                             required
                         />
+
+                        <label htmlFor="firstname">Prénom</label>
                         <input
                             type="text"
                             name="firstname"
+                            id="firstname"
                             placeholder="Prénom"
                             value={userData.firstname}
                             onChange={handleChange}
                             required
                         />
+
+                        <label htmlFor="lastname">Nom</label>
                         <input
                             type="text"
                             name="lastname"
+                            id="lastname"
                             placeholder="Nom"
                             value={userData.lastname}
                             onChange={handleChange}
                             required
                         />
+
                         <button type="button" onClick={handleSubmit}>Créer</button>
                     </form>
                     <button onClick={onClose}>Fermer</button>
