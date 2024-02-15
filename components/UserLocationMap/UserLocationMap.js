@@ -61,8 +61,8 @@ const containerStyle = {
 
 // Positions initiales pour les markers
 const initialPositions = [
-  { lat: -3.745, lng: -38.523 },
-  { lat: 41.898, lng: 12.476 },
+  // { lat: -3.745, lng: -38.523 },
+  // { lat: 41.898, lng: 12.476 },
   // { lat: 40.898, lng: 3.476 },
 ];
 

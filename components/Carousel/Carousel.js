@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import fetchData from '@/app/lib/fetchData';
 import { useAppContext } from '../contextTest2/context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCar, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCar, faUser, faImage } from '@fortawesome/free-solid-svg-icons';
 
 
 const PrestationsCarousel = () => {
@@ -47,14 +47,13 @@ const PrestationsCarousel = () => {
   if (error) return <div>Erreur: {error.message}</div>;
 
   return (
-    <div style={{width : "950px"}}>
+    <div className={styles.carouselContainer}>
       <h2 className={styles.titleContainer}>Prestations populaires :</h2>
       <Slider {...settings}>
         {prestations.map((prestation) => (
           <div key={prestation.id} className={styles.carouselItem}>
             <Link href={`/prestation/${prestation.id}`}>
               
-                {/* <img src="https://challange-esgi.s3.eu-central-1.amazonaws.com/users/125.jpg" alt={prestation.name} /> */}
                 {prestation.image ? (
                                             <img 
                                                 src={prestation.image} 
@@ -64,7 +63,7 @@ const PrestationsCarousel = () => {
                                         ) : (
                                             
                                             <div style={{ fontSize: '40px' }}>
-                                                <FontAwesomeIcon icon={faCar} />
+                                                <FontAwesomeIcon icon={faImage} />
                                             </div>)}
                 <h3>{prestation.name}</h3>
               

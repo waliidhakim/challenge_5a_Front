@@ -19,3 +19,12 @@
     padding-top: 20px;
     margin-top: 20px;
   }
+  
+
+.carouselContainer {
+  padding: 20px; 
+  margin-bottom: 50px; 
+  max-width: 950px; 
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -8,7 +8,7 @@ import ScheduleSelector from 'react-schedule-selector'
 import Navbar from '../../../../components/NavBar/Navbar';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCar } from '@fortawesome/free-solid-svg-icons';
+import { faCar, faImage } from '@fortawesome/free-solid-svg-icons';
 import styles from '../[id]/prestation.css';
 
 
@@ -88,8 +88,30 @@ const PrestationPage = ({ params }) => {
     }
 
     const handlePaymentButtonClick = () => {
-      const scheduleString = encodeURIComponent(JSON.stringify(schedule));
-      router.push(`/payment?prestationId=${prestation.id}&prestationName=${encodeURIComponent(prestation.name)}&schedule=${scheduleString}`);
+
+      const role = localStorage.getItem("role");
+        
+        if (!role || role === "ROLE_PUBLIC_ACCESS") {
+           
+            alert("Vous devez vous connecter pour continuer.");
+        } else {
+            if(schedule.length === 0)
+            {
+              alert("Vous devez selectionner un créneau horaire");
+            }
+            else if(schedule.length > 1)
+            {
+              alert("Vous ne devez sélectionner qu'un seul créneau horaire");
+            }
+            else 
+            {
+              const scheduleString = encodeURIComponent(JSON.stringify(schedule));
+              router.push(`/payment?prestationId=${prestation.id}&prestationName=${encodeURIComponent(prestation.name)}&schedule=${scheduleString}`);
+            }
+          
+        }
+
+     
     };
 
 
@@ -104,20 +126,17 @@ const PrestationPage = ({ params }) => {
         <>
           <h1>{prestation.name}</h1>
           <div className='prestaContainer'>
-          {/* <img src="https://challange-esgi.s3.eu-central-1.amazonaws.com/users/125.jpg" alt={prestation.name} /> */}
           {prestation.image ? 
                 (
                     <img 
                         src={prestation.image} 
                         alt={`Image de ${prestation.name}`} 
-                        // style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }} 
                     />
                 ) : 
                         
-                (
-                            
+                (      
                     <div style={{ fontSize: '40px', }}>
-                        <FontAwesomeIcon icon={faCar} />
+                        <FontAwesomeIcon icon={faImage} />
                     </div>
                 )
            }

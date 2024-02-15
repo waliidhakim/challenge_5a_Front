@@ -13,17 +13,19 @@ import { AuthContextProvider } from '../../components/context/authContext';
 import { AppWrapper } from '../../components/contextTest2/context';
 import SearchResults from '../../components/SearchResults/SearchResults';
 import fetchData from './lib/fetchData';
+import Footer from '../../components/Footer/Footer';
 
 export default function Home({children}) {
 
   const [searchResults, setSearchResults] = useState([]);
+  const [searchMade, setSearchMade] = useState(false);
 
   // const handleSearch = (searchValue, category) => {
   //   console.log('Recherche:', searchValue, 'Catégorie:', category);
   // };
   
   const handleSearch = async (searchValue, selectedCategory, selectedPriceRange) => {
-    
+    setSearchMade(true);
     console.log(searchValue, selectedCategory, selectedPriceRange);
     // const requestBody = {
     //   name: searchValue,
@@ -93,16 +95,20 @@ export default function Home({children}) {
           <>
             <main className={styles.main}>
               <Navbar></Navbar>
-              <div className='homeContainer'>
-              <h1>Accueil</h1>
-              <h2>De quel service avez-vous besoin ?</h2>
-              <p>Pour chaque situation, trouvez le prestataire dont les compétences répondent à vos attentes et à votre niveau d’exigence.</p>
-              <SearchBar onSearch={handleSearch} />
-              <SearchResults results={searchResults} ></SearchResults>
+              <div className={styles.homeContainer}>
+                <h1>Accueil</h1>
+                <h2>De quel service avez-vous besoin ?</h2>
+                <p>Pour chaque situation, trouvez le prestataire dont les compétences répondent à vos attentes et à votre niveau d’exigence.</p>
+                <SearchBar onSearch={handleSearch} />
+                
               </div> 
+
+              <SearchResults results={searchResults} searchMade={searchMade}></SearchResults>
+
+
               <Carousel/>
               {children}
-            
+              <Footer></Footer>
             </main>
           </>
   )

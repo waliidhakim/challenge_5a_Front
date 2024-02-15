@@ -31,7 +31,8 @@ export default function Navbar() {
   return (
 
     <nav className={styles.navbar}>
-        <Link href="/"> Accueil</Link>
+        {/* <Link href="/"> Accueil</Link> */}
+        { true ? <Link href="/"> Accueil </Link> : '' }
 
         {user.role == "ROLE_ADMIN" ? <Link href="/admin"> Admin Section </Link> : '' }
         
