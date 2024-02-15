@@ -10,7 +10,7 @@ import './espacepresta.css'
 
 
 
-export default function page({params}) {
+export default function Page({params}) {
 
   const router = useRouter();
   const idPresta = params.id;  

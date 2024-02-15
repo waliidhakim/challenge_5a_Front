@@ -12,7 +12,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import "./signup.css";
-export default function page() {
+export default function Page() {
   const [isLoading, setIsLoading] = useState(false);
 
   const initalFormData = {
