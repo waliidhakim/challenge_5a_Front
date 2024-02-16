@@ -5,6 +5,7 @@ import fetchData from '../../../lib/fetchData';
 import Navbar from '../../../../../components/NavBar/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import styles from './detailsEtab.module.css';
 
 export default function EtablissementDetailsPage({params}) {
   const router = useRouter();
@@ -44,10 +45,10 @@ export default function EtablissementDetailsPage({params}) {
   return (
     <>  
       <Navbar></Navbar>
-      <div style={{ padding: '20px' }}>
-        <div style={{ borderBottom: '1px solid #ccc', paddingBottom: '20px', marginBottom: '20px' }}>
-          <h1>{etablissement.name}</h1>
-          <img src={etablissement.image} alt={etablissement.name} style={{ maxWidth: '200px', marginBottom: '20px' }} />
+      <div className={styles.container}>
+        <div className={styles.detailsContainer}>
+          <h1 className={styles.title} >{etablissement.name}</h1>
+          <img className={styles.img} src={etablissement.image} alt={etablissement.name}  />
           <p><strong>Adresse :</strong> {etablissement.address}</p>
           <p><strong>Description :</strong> {etablissement.description}</p>
           <p><strong>Relatif à :</strong> {etablissement.relateTo.name}</p>
@@ -55,9 +56,9 @@ export default function EtablissementDetailsPage({params}) {
             <p><strong>Manager :</strong> {etablissement.manager.firstname} {etablissement.manager.lastname} ({etablissement.manager.email})</p>
           )}
         </div>
-        <div style={{ borderBottom: '1px solid #ccc', paddingBottom: '20px', marginBottom: '20px' }}>
+        <div className={styles.prestationsContainer}>
           <h2>Prestations</h2>
-          <button onClick={handleAddPrestationClick} style={{ marginBottom: '20px' }}>
+          <button onClick={handleAddPrestationClick} className={styles.addButton}>
             Ajouter une nouvelle prestation
           </button>
           {etablissement.prestations.length > 0 ? (
@@ -79,29 +80,29 @@ export default function EtablissementDetailsPage({params}) {
 
 
         </div>
-        <div>
+        <div className={styles.employeesContainer}>
           <h2>Employés</h2>
-          <button onClick={() => {}} style={{ marginBottom: '20px' }}>
+          <button className={styles.addButton} onClick={() => {}} >
             Ajouter un nouvel employé
           </button>
 
 
           {etablissement.employees.length > 0 ? (
-                <table style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse' }}>
+                <table className={styles.tableClass} >
                   <thead>
-                    <tr style={{ backgroundColor: '#f0f0f0' }}>
-                      <th style={{ padding: '10px', border: '1px solid #ddd' }}>Image</th>
-                      <th style={{ padding: '10px', border: '1px solid #ddd' }}>Prénom</th>
-                      <th style={{ padding: '10px', border: '1px solid #ddd' }}>Nom</th>
-                      <th style={{ padding: '10px', border: '1px solid #ddd' }}>Email</th>
-                      <th style={{ padding: '10px', border: '1px solid #ddd' }}>Status</th>
-                      <th style={{ padding: '10px', border: '1px solid #ddd' }}>Actions</th>
+                    <tr className={styles.thClass}>
+                      <th className={styles.thClass}>Image</th>
+                      <th className={styles.thClass}>Prénom</th>
+                      <th className={styles.thClass}>Nom</th>
+                      <th className={styles.thClass}>Email</th>
+                      <th className={styles.thClass}>Status</th>
+                      <th className={styles.thClass}>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {etablissement.employees.map((employee, index) => (
                       <tr key={index}>
-                        <td style={{ padding: '10px', border: '1px solid #ddd', textAlign: 'center' }}>
+                        <td className={styles.thClass}>
                           {employee.image ? (
                             <img 
                               src={employee.image} 
@@ -116,13 +117,13 @@ export default function EtablissementDetailsPage({params}) {
                             </div>
                           )}
                         </td>
-                        <td style={{ padding: '10px', border: '1px solid #ddd' }}>{employee.firstname}</td>
-                        <td style={{ padding: '10px', border: '1px solid #ddd' }}>{employee.lastname}</td>
-                        <td style={{ padding: '10px', border: '1px solid #ddd' }}>{employee.email}</td>
-                        <td style={{ padding: '10px', border: '1px solid #ddd' }}>{employee.status ? employee.status : 'N/A'}</td>
-                        <td style={{ padding: '10px', border: '1px solid #ddd' }}>
-                          <button style={{ marginRight: '10px' }}>Planning</button>
-                          <button>Supprimer</button>
+                        <td className={styles.thClass}>{employee.firstname}</td>
+                        <td className={styles.thClass}>{employee.lastname}</td>
+                        <td className={styles.thClass}>{employee.email}</td>
+                        <td className={styles.thClass}>{employee.status ? employee.status : 'N/A'}</td>
+                        <td className={styles.thClass}>
+                          <button className={styles.addButton}>Planning</button>
+                          <button className={styles.addButton}>Supprimer</button>
                         </td>
                       </tr>
                     ))}
