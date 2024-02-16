@@ -4,34 +4,34 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex; /* Ceci peut causer un agencement horizontal */
-    flex-direction: column; /* S'assurer que le contenu est empilé verticalement */
-    align-items: center; /* Centrer les éléments horizontalement */
-    justify-content: flex-start; /* Aligner le contenu depuis le début de la page */
-    min-height: 100vh; /* Hauteur minimale pour prendre toute la hauteur de la fenêtre */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh; 
 }
 
 .card {
-    background-color: #ffffff; /* Couleur de fond légère pour la carte */
+    background-color: #ffffff;
     padding: 40px;
-    border-radius: 20px; /* Bords arrondis pour un look moderne */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet de profondeur */
+    border-radius: 20px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
     width: 100%;
-    max-width: 600px; /* Ajustez selon la largeur désirée */
+    max-width: 600px; 
     margin: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'interaction */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Légère élévation au survol */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .card-header {
-    color: #4A90E2; /* Couleur primaire pour le titre */
+    color: #4A90E2; 
     margin-bottom: 30px;
     text-align: center;
-    font-size: 24px; /* Taille de police ajustée pour le titre */
+    font-size: 24px;
 }
 
 .form-group {
@@ -56,7 +56,8 @@ input, .btn {
     margin-top: 5px;
     border-radius: 20px;
     border: 1px solid #ccc;
-    background-color: #f7f7f7; /* Fond légèrement différent pour les champs */
+    background-color: #f7f7f7; 
+    color:black;
 }
 
 input[type="file"] {
