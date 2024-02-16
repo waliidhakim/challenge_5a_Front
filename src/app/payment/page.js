@@ -82,7 +82,7 @@ const CheckoutButton = () => {
         productName: prestationDetails.name ?? "Produit",
         price: prestationDetails.price ?? 100,
         // imageUrl: prestationDetails.image, // remettre ça après 
-        imageUrl : "https://challange-esgi.s3.eu-central-1.amazonaws.com/users/125.jpg",
+        imageUrl : prestationDetails.image ?? "https://challange-esgi.s3.eu-central-1.amazonaws.com/users/125.jpg",
         idPresta : idPresta,
         prestaSchedule : prestaSchedule, 
         userId : localStorage.getItem('userId')
@@ -111,37 +111,46 @@ const CheckoutButton = () => {
     return (
       <>
       <div><Navbar></Navbar></div>
-        <h1>Récapitulatif</h1>
+        <h1>Récapitulatif de la commande</h1>
         {loading ? <p>Chargement...</p> : (
           <>
             <div className='paymentContainer'>
-              <h2>Détails de la Prestation</h2>
-              <p>Nom: {prestationDetails.name}</p>
-              <p>Prix: {prestationDetails.price}€</p>
-              <p>Catégorie: {prestationDetails.category?.name}</p>
+              <h2>Détails de la prestation</h2>
+              <p><span className="infoLabel">Nom:</span> <span className="infoContent">{prestationDetails.name}</span></p>
+              <p><span className="infoLabel">Prix:</span> <span className="infoContent">{prestationDetails.price}€</span></p>
+              <p><span className="infoLabel">Catégorie:</span> <span className="infoContent">{prestationDetails.category?.name}</span></p>
               {prestationDetails.image ? (
-                                            <img 
-                                                src={prestationDetails.image} 
-                                                alt={`Image de ${prestationDetails.name}`} 
-                                                style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }} 
-                                            />
-                                        ) : (
-                                            
-                                            <div style={{ fontSize: '40px' }}>
-                                                <FontAwesomeIcon icon={faCar} />
-                                            </div>)}
+                    <img 
+                        src={prestationDetails.image} 
+                        alt={`Image de ${prestationDetails.name}`} 
+                        style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }} 
+                    />
+                ) : (
+                    
+                    <div style={{ fontSize: '40px' }}>
+                        <FontAwesomeIcon icon={faCar} />
+                    </div>)}
             </div>
 
 
             <div className='paymentContainer'>
-              <h2>Vos Informations</h2>
-              <p>Nom: {user?.firstname} {user?.lastname}</p>
-              <p>Adresse: {user?.address}</p>
+              <h2>Vos informations</h2>
+              <p><span className="infoLabel">Nom:</span> <span className="infoContent">{user?.firstname} {user?.lastname}</span></p>
+              <p><span className="infoLabel">Adresse:</span> <span className="infoContent">{user?.address}</span></p>
             </div>
             <div className='paymentContainer'>
-              <h2>Planning Choisi</h2>
-              <p>{prestaSchedule ??
-                <span key={index}>{new Date(date).toLocaleString()}</span>
+              <h2>Créneau Choisi</h2>
+              <p className='dateBold'>{
+                prestaSchedule ? 
+                  new Date(JSON.parse(prestaSchedule)[0]).toLocaleString('fr-FR', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false
+                  })
+                : 'Aucun créneau sélectionné'
               }</p>
 
             </div>

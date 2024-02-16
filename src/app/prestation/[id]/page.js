@@ -117,7 +117,7 @@ const PrestationPage = ({ params }) => {
 
 
   if (loading) return <div>Chargement...</div>;
-  if (error) return <div>Erreur: {error.message}</div>;
+  if (error) return <div> <Navbar></Navbar>Aucune prestation trouvé. Erreur: {error.message}</div>;
 
   return (
     <div>
@@ -171,6 +171,9 @@ const PrestationPage = ({ params }) => {
 };
 
 export default PrestationPage;
+
+
+
 
 
 

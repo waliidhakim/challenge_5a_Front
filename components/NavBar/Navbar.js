@@ -34,7 +34,7 @@ export default function Navbar() {
         {/* <Link href="/"> Accueil</Link> */}
         { true ? <Link href="/"> Accueil </Link> : '' }
 
-        {user.role == "ROLE_ADMIN" ? <Link href="/admin"> Admin Section </Link> : '' }
+        {user.role == "ROLE_ADMIN" ? <Link href="/gest"> Admin Section </Link> : '' }
         
         {user.role == "ROLE_PRESTATAIRE" ? <Link href={`/prestataire/${localStorage.getItem('userId')}/my_section`}> Espace Prestataire </Link> : '' }
 

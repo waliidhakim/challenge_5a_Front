@@ -1,4 +1,4 @@
-.modal {
+/* .modal {
     position: fixed; 
     top: 50%; 
     left: 50%; 
@@ -33,8 +33,53 @@
     left: 0;
     right: 0;
     bottom: 0;
-    /* background-color: rgba(0, 0, 0, 0.8);  */
     backdrop-filter: blur(5px);
     z-index: 999; 
 }
+     */
+
+
+
+     .modalBackground {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Activation du fond sombre semi-transparent */
+        backdrop-filter: blur(10px); /* Application d'un effet de flou pour l'arrière-plan */
+        z-index: 999; /* Assure que le fond est juste en dessous de la modal */
+    }
+    
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #FFFFFF; /* Changement pour un fond blanc, propre et épuré */
+        padding: 30px; /* Augmentation du padding pour plus d'espace à l'intérieur */
+        border-radius: 15px; /* Coins arrondis pour un style doux et moderne */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus douce pour un effet de profondeur subtil */
+        z-index: 1000;
+        width: auto; /* Adaptation de la largeur au contenu */
+        max-width: 600px; /* Largeur maximale pour maintenir la lisibilité */
+        border: none; /* Suppression de la bordure noire pour un look plus épuré */
+    }
+    
+    .modal p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: #333; /* Amélioration de la couleur du texte pour le contraste */
+        line-height: 1.5; /* Ajustement de l'espacement des lignes pour la lisibilité */
+    }
+    
+    .modal input {
+        display: block;
+        width: calc(100% - 20px); /* Ajustement de la largeur pour l'alignement avec le padding */
+        padding: 10px; /* Augmentation du padding pour une meilleure interaction */
+        margin: 10px 0; /* Espacement avant et après chaque input */
+        border-radius: 5px; /* Bordures arrondies pour un style cohérent */
+        border: 1px solid #ccc; /* Bordure plus subtile */
+        background-color: #f8f9fa; /* Fond légèrement gris pour distinguer les inputs */
+    }
     
