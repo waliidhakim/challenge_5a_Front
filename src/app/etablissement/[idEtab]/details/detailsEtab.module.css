@@ -1,0 +1,75 @@
+.container {
+    padding: 20px;
+}
+
+.detailsContainer,
+.employeesContainer,
+.prestationsContainer {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.img {
+    max-width: '10px';
+    margin-bottom:'20px';
+    border-radius : 3%;
+}
+
+.info {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.addButton {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.addButton:hover {
+    background-color: #0056b3;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.listItem {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.tableClass {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.thClass,
+.tdClass {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.tableHead {
+    background-color: #f0f0f0;
+}
+
+.actionButton {
+    cursor: pointer;
+    margin-right: 10px;
+}
