@@ -14,8 +14,8 @@ const EtabDetailsModal = ({ etablissement, onClose }) => {
                 <p><strong>Adresse: </strong> {etablissement.address}</p>
                 <p><strong>Description: </strong> {etablissement.description}</p>
                 <p><strong>Appartient au prestataire: </strong> {etablissement.relateTo.name}</p>
-                <p><strong>Responsable: </strong> {etablissement.manager.firstname} {etablissement.manager.lastname }</p>
-                <p><strong>Email du Responsable: </strong> {etablissement.manager.email }</p>
+                <p><strong>Responsable: </strong> {etablissement.manager ? `${etablissement.manager.firstname} ${etablissement.manager.lastname}` : "N/A"}</p>
+                <p><strong>Email du Responsable: </strong> {etablissement.manager ? etablissement.manager.email : "N/A"}</p>
                 <button onClick={onClose}>Fermer</button>
             </div>
 
