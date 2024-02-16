@@ -35,9 +35,9 @@ const PrestataireDetailsModal = ({ prestataire, onClose }) => {
             toast.success("Opération réussie.",{autoClose: 1000});
             setTimeout(() => {
                 onClose();
-                window.location.href = '/admin';
+                window.location.href = '/gest';
             }, 1000); 
-            router.push('/admin');
+            router.push('/gest');
         } else {
             // Gérez l'erreur ici
             console.error("Erreur lors de l'opération");
