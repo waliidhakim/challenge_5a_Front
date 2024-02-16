@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import Navbar from '../../../../../components/NavBar/Navbar';
 import CreateUserModal from '../../../../../components/Modals/UserModals/createUserModal';
 import AssignMangerModal from '../../../../../components/Modals/AssignManagerModal/assignManagerModal';
-
+import styles from './detailsPresta.module.css';
 export default function PrestatairePage({params}) {
 
   const router = useRouter();
@@ -71,8 +71,8 @@ export default function PrestatairePage({params}) {
   return (
     <>
       <Navbar></Navbar>
-      <div style={{ padding: '20px' }}>
-      <div style={{ borderBottom: '1px solid #ccc', paddingBottom: '20px', marginBottom: '20px' }}>
+      <div className={styles.container}>
+      <div className={styles.detailsPrestataire}>
         <h1>Détails du prestataire {prestataire.name}</h1>
         <img src={prestataire.image} alt={prestataire.name} style={{ maxWidth: '200px', marginBottom: '20px' }} />
         <p><strong>Adresse :</strong> {prestataire.address}</p>
@@ -81,9 +81,9 @@ export default function PrestatairePage({params}) {
         <p><strong>Secteur :</strong> {prestataire.sector}</p>
         <p><strong>Kbis :</strong> {prestataire.kbis}</p>
       </div>
-      <div>
+      <div className={styles.etablissements}>
         <h2>Établissements</h2>
-        <button onClick={handleAddEtabClick}>Ajouter un nouvel établissement</button>
+        <button className={styles.buttonClass} onClick={handleAddEtabClick}>Ajouter un nouvel établissement</button>
         {prestataire.establishments.length > 0 ? (
           <ul style={{ listStyleType: 'none', padding: 0 }}>
             {prestataire.establishments.map((etab, index) => (
@@ -99,12 +99,12 @@ export default function PrestatairePage({params}) {
                         ) : (
                           <>
                             <p>Pas de manager</p> 
-                            <button onClick={() => handleOpenModal(extractId(etab['@id']))}>Attribuer un Manager</button>
+                            <button className={styles.buttonClass} onClick={() => handleOpenModal(extractId(etab['@id']))}>Attribuer un Manager</button>
                           </>
                         )}
                 </p>
 
-                <button onClick={() => handleEtabDetailsClick(extractId(etab['@id']))}>
+                <button className={styles.buttonClass} onClick={() => handleEtabDetailsClick(extractId(etab['@id']))}>
                   Voir Détails
                 </button>
               </li>

@@ -1,37 +1,55 @@
 .prestataireContainer {
-    padding-left: 20px;
-    padding-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Fond légèrement gris pour distinguer la zone */
 }
 
-.prestataireContainer h1 {
-    padding-bottom: 20px;
-}
-
-.prestataireContainer h2 {
-    padding-top: 20px;
-    padding-bottom: 10px;
+.prestataireContainer h1, .prestataireContainer h2 {
+    text-align: center; /* Centre les titres pour une apparence plus soignée */
+    color: #272a35; /* Couleur foncée pour le texte */
 }
 
 .prestataireContainer button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background: #272a35;
-    border-radius: 20px;
+    cursor: pointer;
+    display: block; /* Changez en block pour occuper la largeur nécessaire */
+    width: auto; /* Auto pour s'adapter au texte */
+    padding: 10px 20px; /* Plus d'espace autour du texte */
+    margin: 10px auto; /* Centrage du bouton */
+    background-color: #007bff; /* Couleur bleu pour les actions principales */
+    color: white; /* Texte en blanc pour contraste */
+    border: none;
+    border-radius: 5px; /* Bordures moins arrondies pour un look moderne */
+    transition: background-color 0.3s; /* Transition douce pour le survol */
 }
-.prestataireContainer td{
-    padding-left: 35px;
-    padding-right: 35px;
-    background-color: lightgray;
-    border: #000000 1px solid;
+
+.prestataireContainer button:hover {
+    background-color: #0056b3; /* Assombrir au survol */
 }
-.prestataireContainer th{
-    background-color: rgb(146, 146, 146);
-    border: #000000 1px solid;
-    padding-left: 15px;
-    padding-right: 15px;
+
+table {
+    width: 100%; /* Utilisez toute la largeur disponible */
+    margin-top: 20px; /* Espace avant le tableau */
+    border-collapse: collapse; /* Supprime les espaces entre les bordures */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour du relief */
+}
+
+th, td {
+    text-align: left; /* Alignement du texte */
+    padding: 12px; /* Plus d'espace dans les cellules */
+    border-bottom: 1px solid #ddd; /* Ligne de séparation subtile */
+}
+
+th {
+    background-color: #007bff; /* Couleur d'en-tête cohérente avec les boutons */
+    color: white; /* Texte en-tête en blanc */
+}
+
+td img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Images rondes pour les avatars */
+    object-fit: cover;
+}
+
+tr:hover {
+    background-color: #f2f2f2; /* Légère couleur au survol des lignes */
 }

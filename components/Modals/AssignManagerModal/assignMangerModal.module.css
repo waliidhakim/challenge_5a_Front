@@ -1,4 +1,4 @@
-/* UserCreationModal.module.css */
+/* 
 .backdrop {
     position: fixed;
     top: 0;
@@ -26,4 +26,76 @@
     position: relative; 
     transform: translateY(-50%); 
     top: 50%; 
+} */
+
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: #FFFFFF; 
+    color: #333; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    z-index: 100;
+    max-width: 500px;
+    width: auto;
+    margin: auto;
+    box-sizing: border-box;
+    position: relative; 
+    transform: translateY(-50%); 
+    top: 50%; 
+}
+
+.modal h2 {
+    color: #007bff;
+    margin-bottom: 20px; 
+}
+
+.modal input {
+    display: block;
+    width: calc(100% - 20px); 
+    margin: 10px 0; 
+    padding: 10px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    background-color: #f8f9fa;
+    color: black;
+}
+
+.modal button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    width: auto; 
+    background-color: #007bff; 
+    color: white; 
+    transition: background-color 0.3s; 
+}
+
+.modal button:hover {
+    background-color: #0056b3; 
+}
+
+.modal button:last-child {
+    background-color: #308fe3; 
+}
+
+.modal button:last-child:hover {
+    background-color: #545b62; 
 }

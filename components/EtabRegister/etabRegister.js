@@ -78,7 +78,7 @@ const EtabRegisterComponent = (props) => {
             
             toast.success("Opération réussie.",{autoClose: 1500});
             setTimeout(() => {
-                // window.location.href = '/';
+                
                 router.push(`/prestataire/details/${props.idPresta}`);
             }, 1000); 
             console.log("Ajout de l'étab traité avec succès!");
@@ -93,29 +93,30 @@ const EtabRegisterComponent = (props) => {
     };
 
     return (
-        <>  
+        <>      
+            
             <ToastContainer />
             
-            {isLoading && <div>Chargement...</div> }
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Nom de l'établissement :</label>
-                    <input type="text" name="name" value={etab.name} onChange={handleChange} />
+            {isLoading && <div className={styles.loading}>Chargement...</div> }
+            <form onSubmit={handleSubmit} className={styles.container}>
+                <div className={styles['form-group']}>
+                    <label className={styles.labelClass}>Nom de l'établissement :</label>
+                    <input className={styles.inputText} type="text" name="name" value={etab.name} onChange={handleChange} />
 
                 </div>
-                <div>
-                    <label>Adresse :</label>
-                    <input type="text" name="address" value={etab.address} onChange={handleChange} />
+                <div className={styles['form-group']}>
+                    <label className={styles.labelClass}>Adresse :</label>
+                    <input className={styles.inputText} type="text" name="address" value={etab.address} onChange={handleChange} />
                 </div>
-                <div>
-                    <label>Description :</label>
-                    <input type="text" name="description" value={etab.description} onChange={handleChange} />
+                <div className={styles['form-group']}>
+                    <label className={styles.labelClass}>Description :</label>
+                    <input className={styles.inputText} type="text" name="description" value={etab.description} onChange={handleChange} />
                 </div>
-                <div>
-                    <label>Image:</label>
-                    <input type="file" name="image" onChange={handleImageChange} />
+                <div className={styles['form-group']}>
+                    <label className={styles.labelClass}>Image:</label>
+                    <input className={styles.inputFile} type="file" name="image" onChange={handleImageChange} />
                 </div>
-                <button type="submit">Enregistrer</button>
+                <button className={styles.buttonSubmit} type="submit">Enregistrer</button>
             </form>
         
             
