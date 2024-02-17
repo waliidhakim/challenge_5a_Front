@@ -9,13 +9,10 @@ import styles from './prestataireRegister.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faComment,
-  faEnvelope,
   faHashtag,
   faHome,
   faImage,
   faInfo,
-  faLock,
-  faMagnifyingGlass,
   faMagnifyingGlassDollar,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
@@ -57,46 +54,13 @@ const PrestataireRegister = () => {
         }
     };
 
-    // const handleSubmit = async () => {
-    //     setIsLoading(true);
-    //     try {
-    //         const token = localStorage.getItem('jwtToken');
-    //         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/prestataire/register`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Accept': 'application/ld+json',
-    //                 Authorization: token ? `Bearer ${token}` : '',
-    //                 'Content-Type': 'application/ld+json',
-    //             },
-    //             body: JSON.stringify(formData)
-    //         });
-
-    //         if (!response.ok) {
-    //             throw new Error(`HTTP error! status: ${response.status}`);
-    //         }
-
-    //         const data = await response.json();
-    //         console.log(data);
-    //         toast.success("Opération réussie. Veuillez attendre l'approbation de l'admin");
-    //         setIsLoading(false); 
-    //         setFormData(initialFormData);
-    //         // router.push('/');
-            
-            
-    //     } catch (error) {
-    //         console.error("Erreur lors de l'envoi des données:", error);
-    //         setIsLoading(false); 
-    //         toast.error("Une erreur est survenue. Veuillez réessayer.");
-    //     }
-       
-    // };
+   
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
 
         const formData = new FormData();
-        // formData.append('email', user.email);
         formData.append('name', presta.name);
         formData.append('address', presta.address);
         formData.append('description', presta.description);
@@ -113,30 +77,25 @@ const PrestataireRegister = () => {
 
         try {
             
-            // console.log("form data user mise à jour profil :", formData);
             const token = localStorage.getItem('jwtToken');
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/prestataire/register`, {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
                   Authorization: token ? `Bearer ${token}` : '',
-                //   'Content-Type': 'multipart/form-data',
+               
                 },
                 body: formData,
-                // body: JSON.stringify({
-                //   "firstname" : "izannnzzzzzzzzzzzz",
-                //   "lastname" : "izan"
-                // }),
+            
             });
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
-            // const updatedData = await response.json();
+            
             toast.success("Opération réussie. Veuillez attendre l'approbation de l'admin",{autoClose: 1500});
             setTimeout(() => {
-                // window.location.href = '/';
                 router.push(`/prestataire/${localStorage.getItem("userId")}/my_section`);
             }, 1000); 
             console.log('demande de prestataire traitée avec succès!');
@@ -153,33 +112,7 @@ const PrestataireRegister = () => {
     return (
         <>  
             <ToastContainer />
-            {/* <div className={styles.form}>
-                
-                {isLoading && <div>Chargement...</div> }
-                
-                <label htmlFor="name">Nom:</label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Nom" required />
-                
-                <label htmlFor="address">Adresse:</label>
-                <input type="text" id="address" name="address" value={formData.address} onChange={handleChange} placeholder="Adresse" required />
-                
-                <label htmlFor="description">Description:</label>
-                <textarea id="description" name="description" value={formData.description} onChange={handleChange} placeholder="Description" required />
-                
-                <label htmlFor="contactInfos">Informations de contact:</label>
-                <input type="text" id="contactInfos" name="contactInfos" value={formData.contactInfos} onChange={handleChange} placeholder="Informations de contact" required />
-                
-                <label htmlFor="sector">Secteur:</label>
-                <input type="text" id="sector" name="sector" value={formData.sector} onChange={handleChange} placeholder="Secteur" required />
-                
-                <label htmlFor="kbis">Kbis:</label>
-                <input type="text" id="kbis" name="kbis" value={formData.kbis} onChange={handleChange} placeholder="Kbis" required />
-                
-                <label htmlFor="image">Image URL:</label>
-                <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} placeholder="Image URL" required />
-                
-                <button type="button" onClick={handleSubmit}>Envoyer</button>
-            </div> */}
+        
             {isLoading && <div>Chargement...</div> }
             <form className={styles.prestaForm} onSubmit={handleSubmit}>
             <h1>Devenir Prestataire</h1>
@@ -187,14 +120,12 @@ const PrestataireRegister = () => {
                 <FontAwesomeIcon icon={faUser} />
                     <input className={styles.prestaInput} type="text" name="name" placeholder="Nom du prestataire" value={presta.name} onChange={handleChange} />
 
-                    {/* <label htmlFor="name">Nom:</label>
-                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Nom" required /> */}
+                   
                 </div>
                 <div className={styles.formgroup}>
                 <FontAwesomeIcon icon={faHome} />
                     <input className={styles.prestaInput} type="text" name="address" placeholder="Adresse" value={presta.address} onChange={handleChange} />
-                    {/* <label>Nom:</label>
-                    <input type="text" name="lastname" value={user.lastname || ''} onChange={handleChange} /> */}
+                
                 </div>
                 <div className={styles.formgroup}>
                 <FontAwesomeIcon icon={faComment} />

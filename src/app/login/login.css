@@ -68,7 +68,7 @@ input, .btn {
 
 input[type="text"], input[type="password"], input[type="email"] {
     flex-grow: 1;
-    margin-right: 10px; /* Ajuste l'espacement entre l'icône et le champ */
+    margin-right: 10px;
 }
 
 .btn {
@@ -76,8 +76,8 @@ input[type="text"], input[type="password"], input[type="email"] {
     color: white;
     border: none;
     cursor: pointer;
-    width: auto; /* Permet au bouton de s'ajuster au texte */
-    padding: 10px 15px; /* Uniformise le padding avec les inputs */
+    width: auto; 
+    padding: 10px 15px; 
 }
 
 .btn:hover {
@@ -85,5 +85,5 @@ input[type="text"], input[type="password"], input[type="email"] {
 }
 
 .btn + .btn {
-    margin-left: 10px; /* Espacement entre les boutons */
+    margin-left: 10px; 
 }

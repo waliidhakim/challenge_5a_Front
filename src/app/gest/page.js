@@ -243,15 +243,6 @@ const Page = () => {
                     'Content-Type': 'application/merge-patch+json',
                 },
                 body: JSON.stringify(dataToSend),
-                // body: JSON.stringify({
-                //     name: "stringddddddddddddd",
-                //     address: "stringdddddddddddddddddd",
-                //     description: "stringdddddddddddddddddd",
-                //     contactInfos: "stringddddddddddddddddd",
-                //     sector: "stringddddddddddddddddddddddd",
-                //     kbis: "stringdddddddddddddddddd",
-                //     status: "stringdddddddddddddddddd"
-                //   }),
             });
             const responseBody = await response.json();
             console.log("Edit presta response:", response, responseBody);

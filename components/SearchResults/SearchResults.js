@@ -1,9 +1,9 @@
 
 import React from 'react';
-import styles from './SearchResults.module.css'; // Assurez-vous de créer ce fichier CSS pour le style
+import styles from './SearchResults.module.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCar, faImage } from '@fortawesome/free-solid-svg-icons';
-import { useRouter } from 'next/navigation'; // Utilisez 'next/router' au lieu de 'next/navigation'
+import { useRouter } from 'next/navigation'; 
 
 const SearchResults = ({ results, searchMade }) => {
 

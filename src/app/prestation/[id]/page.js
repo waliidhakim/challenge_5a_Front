@@ -1,15 +1,13 @@
-// // src/app/prestation/[id]/page.js
 "use client"
 import React, { useState, useEffect } from 'react';
 import fetchData from '@/app/lib/fetchData';
-// import Calendar from '../../../../components/Calendar/Calendar';
-// import TimeslotCalendar from 'react-timeslot-calendar';
+
 import ScheduleSelector from 'react-schedule-selector'
 import Navbar from '../../../../components/NavBar/Navbar';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCar, faImage } from '@fortawesome/free-solid-svg-icons';
-import styles from '../[id]/prestation.css';
+import {  faImage } from '@fortawesome/free-solid-svg-icons';
+
 
 
 
@@ -50,21 +48,9 @@ const PrestationPage = ({ params }) => {
     }
   }, [id]);
 
-  let timeslots = [
-    ["9", "10"], 
-    ["10", "11"], 
-    ["11", "12"],  
-    ["14", "15"],  
-    ["15", "16"],  
-    ["16", "17"],  
-  ];
 
-  let ignoreWeekends = {
-    'saturdays': false,
-    'sundays': false,
-    'mondays' : false,
-    'saturdays' : false
-  }
+
+ 
 
   let disabledTimeslots = [
     {
@@ -77,15 +63,7 @@ const PrestationPage = ({ params }) => {
     }
     ]
 
-    let onSelectTimeslot = (allTimeslots, lastSelectedTimeslot) => {
-        console.log(lastSelectedTimeslot.startDate); // MomentJS object.
-        console.log("ddddd"); // MomentJS object.
-      
-      }
-    let timeslotProps = {
-        format: 'h', // Each element in the timeslot array is an Hour
-        showFormat: 'h:mm A', // They will be displayed as Hour:Minutes AM/PM
-    }
+   
 
     const handlePaymentButtonClick = () => {
 

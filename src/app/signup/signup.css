@@ -76,13 +76,13 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .btn {
-    background-color: #4A90E2; /* Couleur primaire pour le bouton */
-    color: white; /* Texte blanc pour le bouton */
+    background-color: #4A90E2; 
+    color: white; 
     border: none;
     cursor: pointer;
     margin-top: 20px;
 }
 
 .btn:hover {
-    background-color: #357ABD; /* Couleur au survol du bouton */
+    background-color: #357ABD;
 }

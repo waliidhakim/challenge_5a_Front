@@ -48,8 +48,8 @@ const CreateUserModal = ({ isOpen, onClose, onSubmit }) => {
           }
     
           const result = await response.json();
-          onSubmit(result); // Vous pouvez appeler cette fonction si vous souhaitez faire quelque chose après la création réussie de l'utilisateur
-          onClose(); // Fermer la modal après la création réussie
+          onSubmit(result); 
+          onClose(); 
         } catch (error) {
           console.error('Erreur lors de la création de l’utilisateur:', error);
           alert('Erreur lors de la création de l’utilisateur');

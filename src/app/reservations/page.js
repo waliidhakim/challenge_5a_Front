@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../../../components/NavBar/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import styles from './ReservationPage.module.css'; // Assurez-vous de créer ce fichier CSS pour le style
+import styles from './ReservationPage.module.css'; 
 import fetchData from '../lib/fetchData';
 import { useRouter } from 'next/navigation';
 
@@ -36,7 +36,7 @@ export default function Page() {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings/${bookingId}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem("jwtToken")}`, // Assurez-vous d'envoyer le JWT token si nécessaire
+          'Authorization': `Bearer ${localStorage.getItem("jwtToken")}`, 
         },
       });
       if (!response.ok) {
@@ -46,8 +46,7 @@ export default function Page() {
       //Recharger les réservations
       fetchBookings();
 
-      // autre: Filtrer la réservation supprimée
-      // setBookings(bookings.filter(booking => booking.id !== bookingId));
+
     } catch (error) {
       console.error('Erreur lors de la suppression de la réservation:', error);
     }

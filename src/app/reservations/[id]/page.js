@@ -12,23 +12,10 @@ export default function Page({ params }) {
   const [error, setError] = useState(null);
 
   const [availableDates, setAvailableDates] = useState([]);
-//   const [disabledTimeslots,setDisabledTimeslots] = useState([]);
+
   const [schedule, setSchedule] = useState([]);
 
-//   const calculateDisabledTimeslots = () => {
-//     const now = moment();
-//     const timeslots = [];
 
-//     for (let hour = 8; hour < now.hour(); hour++) {
-//       timeslots.push({
-//         //startDate: now.clone().hour(hour).minute(0).format('MMMM Do YYYY, h:mm:ss A'),
-//         startDate:'February 11th 2024, 2:00:00 PM',
-//         format: 'MMMM Do YYYY, h:mm:ss A',
-//       });
-//     }
-
-//     setDisabledTimeslots(timeslots);
-//   };
 
   const getBookingDetails = async () => {
     try {
@@ -45,7 +32,6 @@ export default function Page({ params }) {
   useEffect(() => {
     getBookingDetails();
 
-    //calculateDisabledTimeslots();
   }, [params.id]);
 
   let timeslots = [
@@ -81,8 +67,8 @@ export default function Page({ params }) {
       
       }
     let timeslotProps = {
-        format: 'h', // Each element in the timeslot array is an Hour
-        showFormat: 'h:mm A', // They will be displayed as Hour:Minutes AM/PM
+        format: 'h',
+        showFormat: 'h:mm A', 
     }
 
     const handlePaymentButtonClick = () => {
@@ -97,13 +83,13 @@ export default function Page({ params }) {
     };
 
     const handleSubmit = async () => {
-        // Assurez-vous qu'un créneau a été sélectionné
+       
         if (schedule.length === 0) {
             console.error('Aucun créneau sélectionné');
             return;
         }
 
-        // Prend le premier créneau sélectionné pour cet exemple
+      
         const selectedDate = schedule[0].toISOString();
 
         console.log("new booking date : ", selectedDate);
@@ -126,8 +112,8 @@ export default function Page({ params }) {
                 throw new Error(`Failed to update booking, status: ${response.status}`);
             }
 
-            // Mise à jour réussie
-            await getBookingDetails(); // Actualisez les détails de la réservation si nécessaire
+            
+            await getBookingDetails();
             console.log('Booking updated successfully');
         } catch (error) {
             console.error('Error updating booking:', error);

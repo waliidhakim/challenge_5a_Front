@@ -9,17 +9,17 @@ import { useRouter } from 'next/navigation';
 
 
 export default function Navbar() {
-  // const { user, token, login, logout } = useAuth();
+  
 
   const context = useAppContext();
 
-  // console.log("infos context from navbar", context);
+
   const {user} = context;
 
   const router = useRouter();
 
     const handleLogout = (event) => {
-        //event.preventDefault(); // Empêche la navigation par défaut
+  
 
         // Vider toutes les variables du localStorage
         localStorage.clear();
@@ -31,7 +31,6 @@ export default function Navbar() {
   return (
 
     <nav className={styles.navbar}>
-        {/* <Link href="/"> Accueil</Link> */}
         { true ? <Link href="/"> Accueil </Link> : '' }
 
         {user.role == "ROLE_ADMIN" ? <Link href="/gest"> Admin Section </Link> : '' }
@@ -55,7 +54,6 @@ export default function Navbar() {
         {user.role == "ROLE_PUBLIC_ACCESS" ? <Link href="/signup"> S'inscrire </Link> : '' }
         
         
-        {/* {user.role != "ROLE_PUBLIC_ACCESS" ? <Link href="/logout"> Se deconnecter </Link> : "" } */}
         {user.role !== "ROLE_PUBLIC_ACCESS" ? (
             <a href="" onClick={handleLogout}>Se déconnecter</a>
         ) : (

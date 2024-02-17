@@ -27,7 +27,7 @@ export default function Page() {
   const [formData, setFormData] = useState(initalFormData);
 
   const handleChange = (event) => {
-    //console.log(event.target.value)
+
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -51,13 +51,12 @@ export default function Page() {
         console.log("Erreur lors de l'inscription", response.body);
         throw new Error("Erreur lors de l'inscription");
       }
-      //console.log(response.body);
+      
       setIsLoading(false);
       setFormData(initalFormData);
       toast.success("Opération réussie. Veuillez consulter votre boite mail", {
         autoClose: 1500,
       });
-      // Gérer la réponse - par exemple, rediriger l'utilisateur ou afficher un message de succès
     } catch (error) {
       setIsLoading(false);
       toast.error("l'Opération a échoué. Veuillez réssayer", {
@@ -67,78 +66,6 @@ export default function Page() {
     }
   };
 
-//   return (
-//     <>
-//       <Navbar></Navbar>
-//       <ToastContainer />
-//       <div className="card">
-//         <h2 className="card-header">Créer un compte</h2>
-//         <div className="card-body">
-//           <form onSubmit={handleSubmit}>
-//             <div className="form-group">
-//               <FontAwesomeIcon icon={faUser} />
-//               <input
-//                 name="firstname"
-//                 type="text"
-//                 onChange={handleChange}
-//                 placeholder="Entrer votre nom"
-//               />
-//             </div>
-//             <div className="form-group">
-//               <FontAwesomeIcon icon={faUser} />
-//               <input
-//                 name="lastname"
-//                 type="text"
-//                 onChange={handleChange}
-//                 placeholder="Entrez votre prénom"
-//               />
-//             </div>
-//             <div className="form-group">
-//               <FontAwesomeIcon icon={faEnvelope} />
-//               <input
-//                 name="email"
-//                 type="text"
-//                 onChange={handleChange}
-//                 placeholder="Entrer votre adresse email"
-//               />
-//             </div>
-//             <div className="form-group">
-//               <FontAwesomeIcon icon={faHome} />
-//               <input
-//                 name="address"
-//                 type="text"
-//                 onChange={handleChange}
-//                 placeholder="Entrer votre adresse"
-//               />
-//             </div>
-//             <div className="form-group">
-//               <FontAwesomeIcon icon={faLock} />
-//               <input
-//                 name="password"
-//                 type="password"
-//                 onChange={handleChange}
-//                 placeholder="Entrez votre mot de passe"
-//               />
-//             </div>
-
-//             <div className="form-group">
-//               <FontAwesomeIcon icon={faLock} />
-//               <input
-//                 name="confirmPassword"
-//                 type="password"
-//                 onChange={handleChange}
-//                 placeholder="Confirmer votre mot de passe"
-//               />
-//             </div>
-
-//             <button className="btn btn-primary">S'inscrire</button>
-//             {/* <Link href="/account/login" className="btn btn-link">Cancel</Link> */}
-//           </form>
-//           {isLoading && <div>Chargement...</div>}
-//         </div>
-//       </div>
-//     </>
-//   );
 
 return (
     <>

@@ -87,10 +87,8 @@ export default function Page({params}) {
                                             </div>)}
                                 </td>
                                 <td>    
-                                    {/* <button onClick={() => handlePrestaDetailsClick(prestataire)}>Détails</button> */}
                                     <button onClick={() => {router.push(`/prestataire/details/${extractId(prestataire['@id'])}`)}}>Détails</button>
-                                    {/* <button onClick={() => {}}>Modifier</button>  
-                                    <button onClick={() => {}}>Supprimer</button> */}
+                                   $
                                 </td>
                             </tr>
                         ))}

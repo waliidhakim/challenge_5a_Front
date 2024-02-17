@@ -24,7 +24,6 @@ const ProfilePage = () => {
     const context = useAppContext();
 
     useEffect(() => {
-        // Requête GET pour récupérer les données de l'utilisateur
         const fetchData = async () => {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/${localStorage.getItem("userId")}`, {
                 method: 'GET',
@@ -79,20 +78,15 @@ const ProfilePage = () => {
 
         try {
             
-            // console.log("form data user mise à jour profil :", formData);
             const token = localStorage.getItem('jwtToken');
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/update_profil/${context.user.id}`, {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
                   Authorization: token ? `Bearer ${token}` : '',
-                //   'Content-Type': 'multipart/form-data',
                 },
                 body: formData,
-                // body: JSON.stringify({
-                //   "firstname" : "izannnzzzzzzzzzzzz",
-                //   "lastname" : "izan"
-                // }),
+            
             });
 
             if (!response.ok) {
@@ -101,47 +95,13 @@ const ProfilePage = () => {
 
             const updatedData = await response.json();
             console.log('Modifications enregistrées avec succès!', updatedData);
-            setUser(updatedData); // Mettre à jour l'état avec les données actualisées
+            setUser(updatedData); 
         } catch (error) {
             console.error("Erreur lors de l'enregistrement des modifications:", error);
         }
     };
 
-    // return (
-    //     <div>
-    //         <Navbar></Navbar>
-    //         <div className="page-content">
-    //         <div className='profileContainer'>
-    //         <h1>Profil de l'utilisateur</h1>
-    //         <form onSubmit={handleSubmit}>
-    //             {/* <div>
-    //                 <label>Email:</label>
-    //                 <input type="email" name="email" value={user.email || ''} onChange={handleChange} />
-    //             </div> */}
-    //             <div className="form-group">
-    //             <FontAwesomeIcon icon={faUser} />
-    //                 <input type="text" name="firstname" value={user.firstname || ''} onChange={handleChange} />
-    //             </div>
-    //             <div className="form-group">
-    //             <FontAwesomeIcon icon={faUser} />
-    //                 <input type="text" name="lastname" value={user.lastname || ''} onChange={handleChange} />
-    //             </div>
-    //             <div className="form-group">
-    //             <FontAwesomeIcon icon={faHome} />
-    //                 <input type="text" name="address" value={user.address || ''} onChange={handleChange} />
-    //             </div>
-    //             <div className="form-group">
-    //             <FontAwesomeIcon icon={faImage} />
-    //                 <input type="file" name="image" onChange={handleImageChange} required />
-    //                 {user.image && <img src={user.image} alt="Profil" style={{ maxWidth: '200px' }} />}
-    //             </div>
-    //             <button type="submit">Enregistrer</button>
-    //         </form>
-    //         </div> 
-
-    //         </div>
-    //     </div>
-    // );
+  
     return (
         <div>
             <Navbar />

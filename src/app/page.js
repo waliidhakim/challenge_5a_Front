@@ -2,17 +2,13 @@
 import React, { useState } from 'react';
 import styles from './page.module.css';
 import Navbar from '../../components/NavBar/Navbar';
-// import  AuthProvider  from '../../components/context/authContext';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Carousel from '../../components/Carousel/Carousel';
-// import ContextProvider from '../../components/contextTest/contextTest';
-// import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
-import { AuthProvider } from '../../components/context/authContext';
-import { AuthContextProvider } from '../../components/context/authContext';
-import { AppWrapper } from '../../components/contextTest2/context';
+
 import SearchResults from '../../components/SearchResults/SearchResults';
-import fetchData from './lib/fetchData';
+
 import Footer from '../../components/Footer/Footer';
 
 export default function Home({children}) {
@@ -20,35 +16,12 @@ export default function Home({children}) {
   const [searchResults, setSearchResults] = useState([]);
   const [searchMade, setSearchMade] = useState(false);
 
-  // const handleSearch = (searchValue, category) => {
-  //   console.log('Recherche:', searchValue, 'Catégorie:', category);
-  // };
+
   
   const handleSearch = async (searchValue, selectedCategory, selectedPriceRange) => {
     setSearchMade(true);
     console.log(searchValue, selectedCategory, selectedPriceRange);
-    // const requestBody = {
-    //   name: searchValue,
-    //   category: category,
-    //   price: price,
-    // };
-
-    // try {
-    //   const data = await fetchData(`${process.env.NEXT_PUBLIC_API_URL}/prestations/research`, {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/ld+json',
-    //     },
-    //     body: JSON.stringify(requestBody),
-    //   });
-
-    //   console.log("Résultats de recherche : ", data);
-    //   setSearchResults(data);
-    // } catch (error) {
-    //   console.error('Erreur lors de la recherche:', error);
-      
-    // }
-     // Transformer la gamme de prix en une valeur numérique appropriée pour l'API
+   
   let priceRange;
   switch (selectedPriceRange) {
     case '0-50':
@@ -61,7 +34,7 @@ export default function Home({children}) {
       priceRange = { min: 100, max: 200 };
       break;
     default:
-      priceRange = null; // ou une autre logique par défaut
+      priceRange = null; 
   }
 
   const requestBody = {

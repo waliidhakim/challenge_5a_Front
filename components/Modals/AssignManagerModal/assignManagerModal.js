@@ -20,13 +20,11 @@ const AssignMangerModal = ({ isOpen, onClose, onSubmit, etabId}) => {
 
     const handleSubmit = async () => {
         setIsLoading(true);
-        //toast.success("Opération réussie.",{autoClose: 1200});
         const token = localStorage.getItem('jwtToken');
         try {
           const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/establishments/${etabId}/assignManager`, {
             method: 'PATCH',
             headers: {
-                // Authorization: token ? `Bearer ${token}` : '',
                 'Content-Type': 'application/merge-patch+json',
                 'Accept' : '*/*',
                 Authorization: token ? `Bearer ${token}` : '',

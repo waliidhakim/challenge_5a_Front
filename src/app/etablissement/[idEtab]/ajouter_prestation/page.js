@@ -1,8 +1,8 @@
-// src/app/pages/prestataire/become_prestataire/page.js
+
 import React from 'react';
 import AddPrestationComponent from '../../../../../components/AddPrestation/AddPrestationComponent';
 import Navbar from '../../../../../components/NavBar/Navbar';
-// import EtabRegisterComponent from '../../../../../components/EtabRegister/etabRegister';
+
 
 const Page = ({params}) => {
 

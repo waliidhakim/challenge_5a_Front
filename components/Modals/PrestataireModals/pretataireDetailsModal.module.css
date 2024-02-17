@@ -1,42 +1,3 @@
-/* .modal {
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    background-color: lightgray; 
-    border:  1px solid black;
-    padding: 20px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    z-index: 1000; 
-    width: 50%; 
-    max-width: 600px; 
-}
-
-.modal p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-.modal input{
-    display: block;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    width: 200px;
-    padding: 5px;
-    margin-left: 10px;
-    margin-top:  5px;
-    margin-bottom: 5px;
-}
-.modalBackground {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    backdrop-filter: blur(5px);
-    z-index: 999; 
-}
-     */
 
 
 
@@ -46,9 +7,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Activation du fond sombre semi-transparent */
-        backdrop-filter: blur(10px); /* Application d'un effet de flou pour l'arrière-plan */
-        z-index: 999; /* Assure que le fond est juste en dessous de la modal */
+        background: rgba(0, 0, 0, 0.5); 
+        backdrop-filter: blur(10px); 
+        z-index: 999; 
     }
     
     .modal {
@@ -56,30 +17,30 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: #FFFFFF; /* Changement pour un fond blanc, propre et épuré */
-        padding: 30px; /* Augmentation du padding pour plus d'espace à l'intérieur */
-        border-radius: 15px; /* Coins arrondis pour un style doux et moderne */
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus douce pour un effet de profondeur subtil */
+        background-color: #FFFFFF;
+        padding: 30px; 
+        border-radius: 15px; 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
         z-index: 1000;
-        width: auto; /* Adaptation de la largeur au contenu */
-        max-width: 600px; /* Largeur maximale pour maintenir la lisibilité */
-        border: none; /* Suppression de la bordure noire pour un look plus épuré */
+        width: auto; 
+        max-width: 600px; 
+        border: none; 
     }
     
     .modal p {
         margin-top: 10px;
         margin-bottom: 10px;
-        color: #333; /* Amélioration de la couleur du texte pour le contraste */
-        line-height: 1.5; /* Ajustement de l'espacement des lignes pour la lisibilité */
+        color: #333; 
+        line-height: 1.5; 
     }
     
     .modal input {
         display: block;
-        width: calc(100% - 20px); /* Ajustement de la largeur pour l'alignement avec le padding */
-        padding: 10px; /* Augmentation du padding pour une meilleure interaction */
-        margin: 10px 0; /* Espacement avant et après chaque input */
-        border-radius: 5px; /* Bordures arrondies pour un style cohérent */
-        border: 1px solid #ccc; /* Bordure plus subtile */
-        background-color: #f8f9fa; /* Fond légèrement gris pour distinguer les inputs */
+        width: calc(100% - 20px); 
+        padding: 10px; 
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc; 
+        background-color: #f8f9fa; 
     }
     

@@ -1,4 +1,3 @@
-// src/app/components/PrestataireForm/index.js
 "use client"
 import React, { useState } from 'react';
 import styles from './etabRegister.module.css';

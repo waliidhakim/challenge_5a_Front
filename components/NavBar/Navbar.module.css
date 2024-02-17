@@ -1,30 +1,3 @@
-/* .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 0, 0);
-    color: #FFFFFF;
-    font-weight: bold;
-    height: 4rem;
-    width: 100%;
-    
-}
-
-.navbar a {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 5%;
-    min-width: 150px;
-    text-align: center;
-}
-.navbar a:hover {
-    background-color: #FFFFFF;
-    color: black;
-    padding: 5px;
-    border-radius: 10px;
-    transform: scale(1.2);
-    transition: 0.4s;
-} */
 
 
 
@@ -32,24 +5,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #81daea, #3d8ed9); /* Dégradé de couleurs */
+    background: linear-gradient(to right, #81daea, #3d8ed9); 
     color: #FFFFFF;
     font-weight: bold;
     height: 4rem;
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ombre légère pour un effet de profondeur */
-    padding: 0 20px; /* Padding sur les côtés */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 0 20px; 
 }
 
 .navbar a {
-    margin: 0 15px; /* Ajustement des marges pour un espacement uniforme */
-    padding: 10px 15px; /* Padding pour un meilleur toucher visuel */
-    border-radius: 5px; /* Bordures arrondies */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce pour le survol */
+    margin: 0 15px; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .navbar a:hover {
     background-color: #FFFFFF;
     color: #007991;
-    transform: translateY(-2px); /* Effet de soulèvement léger */
+    transform: translateY(-2px);
 }

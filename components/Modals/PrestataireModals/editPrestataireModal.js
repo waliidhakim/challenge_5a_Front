@@ -20,7 +20,6 @@ const EditPrestataireModal = ({ prestataire, onClose, onSave }) => {
     };
 
     const handleChange = (e) => {
-        //console.log(e);
         setPretataireInfos({ ...prestataireInfos, [e.target.name]: e.target.value });
       };
 
@@ -61,10 +60,6 @@ const EditPrestataireModal = ({ prestataire, onClose, onSave }) => {
                     Numéro Kbis:
                     <input type="text" name="kbis" value={prestataireInfos.kbis} onChange={handleChange} />
                 </label>
-                {/* <label>
-                    Statut de la demande d'approbation:
-                    <input type="text" name="status" value={prestataireInfos.status} onChange={handleChange} />
-                </label> */}
                 <div className={styles.buttonContainer}>
                     <button onClick={handleSubmit}>Enregistrer</button>
                     <button onClick={onClose}>Annuler</button>

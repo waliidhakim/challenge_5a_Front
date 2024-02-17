@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import fetchData from '../../../lib/fetchData';
 import Navbar from '../../../../../components/NavBar/Navbar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import styles from './detailsEtab.module.css';
 
 export default function EtablissementDetailsPage({params}) {
@@ -16,7 +14,7 @@ export default function EtablissementDetailsPage({params}) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!id) return;  // Ne rien faire si l'ID n'est pas encore chargé
+    if (!id) return;  
 
     const fetchEtablissementData = async () => {
       setLoading(true);
@@ -70,7 +68,7 @@ export default function EtablissementDetailsPage({params}) {
                   <p><strong>Durée :</strong> {prestation.duration} minutes</p>
                   <p><strong>Catégorie :</strong> {prestation.category.name ?? ''}</p>
                   <p><strong>Prix :</strong> {prestation.price}€</p>
-                  {/* <p><strong>Catégorie :</strong> {prestation.category.name}</p> */}
+                
                 </li>
               ))}
             </ul>
@@ -113,7 +111,7 @@ export default function EtablissementDetailsPage({params}) {
                             <div 
                               style={{ fontSize: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '50px', height: '50px', borderRadius: '50%', backgroundColor: '#f0f0f0' }}
                             >
-                              {/* Utilisez ici votre icône FontAwesome ou une autre icône */}
+                            
                             </div>
                           )}
                         </td>
